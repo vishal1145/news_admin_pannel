@@ -1,1 +1,1 @@
-# news_admin_pannel
+# laravel_admin_pannel
