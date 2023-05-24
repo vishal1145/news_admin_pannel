@@ -146,43 +146,16 @@
         </div>
       </li>
 
-      <!-- <li class="nav-item">
-        <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#submenu">
-          <span>
-            <span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16" id="IconChangeColor">
-                <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" id="mainIconPathAttribute"></path>
-                <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" id="mainIconPathAttribute"></path>
-              </svg>
-
-            </span>
-            <span class="sidebar-text" style="margin-left: 12px;">SubCategory</span>
-          </span>
-          <span class="link-arrow"><svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-            </svg></span>
-        </span>
-        <div class="multi-level collapse" role="list" id="submenu" aria-expanded="false">
-          <ul class="flex-column nav">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('upgrade-to-pro', [ 'tid' => '-1' ]) }}">
-                <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
-                  </path>
-                </svg>
-                <span class="sidebar-text">Add SubCategory</span>
-              </a>
-            </li>
-            <li class="nav-item {{ Request::segment(1) == 'lock' ? 'active' : '' }}">
-              <a class="nav-link" href="/b">
+      
+      <li class="nav-item {{ Request::segment(1) == 'lock' ? 'active' : '' }}">
+              <a class="nav-link" href="/buttons">
                 <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                 </svg>
-                <span class="sidebar-text">Manage Category</span>
+                <span class="sidebar-text" style="margin-left: 12px;">Manage SubCategory</span>
               </a>
-            </li>
-          </ul>
-        </div>
-      </li> -->
+            
+      </li>
       <!-- <li class="nav-item">
         <a href="https://themesberg.com/product/laravel/volt-pro-admin-dashboard-template" target="_blank" class="nav-link d-flex justify-content-between">
           <span>

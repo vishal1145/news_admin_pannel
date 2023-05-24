@@ -29,6 +29,10 @@
             position: absolute;
             top: 50%;
         }
+
+        #textAreaExample6 {
+            height: 12.125rem;
+        }
     </style>
 </head>
 
@@ -93,15 +97,47 @@
             <div class="col-12 col-xl-8">
 
                 <div class="card card-body border-0 shadow mb-4">
-                    <h2 class="h5 mb-4">Sub Category</h2>
+
                     <form action="{{ route('subcategory.store') }}" id="myform" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="tid" value="{{ $editId }}">
                         <!--  -->
                         <div class="row">
+                            <div class="col-md-6">
+                                <h2 class="h5 mb-4">Sub Category</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="Domain">Domain:</label>
+                                <select class="form-select condition" aria-label="" value="{{ $domain_name }}" name="domain_name" id="domain_name" checked>
+                                    <option value="option_select" disabled selected>Domain</option>
+                                    @foreach(App\Models\Domain::all() as $key=> $Domain)
+                                    @if($domain_name == $Domain->domain_name)
+                                    <option @selected( $Domain->domain_name == $Domain->domain_name) value="{{ $Domain->domain_name }}">
+                                        {{ $Domain->domain_name }}
+                                    </option>
+                                    @else
+                                    <option>
+                                        {{ $Domain->domain_name }}
+                                    </option>
+                                    @endif
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="category_id">Category ID:</label>
+                                <input type="text" name="category_id" value="{{ $category_id }}" class="form-control" placeholder="Category id">
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="Name">Name:</label>
-                                <input type="text" name="Name" value="{{ $Name }}"class="form-control" placeholder="Name">
+                                <input type="text" name="Name" value="{{ $Name }}" class="form-control" placeholder="Name" required>
 
                             </div>
                             <div class="col-md-6 mb-3">
@@ -114,29 +150,24 @@
                                     @else
 
                                     <label for="last_name">Image:</label>
-                                    <input type="file" name="Image" class="form-control" placeholder="Image_url">
+                                    <input type="file" name="Image" class="form-control" placeholder="Image_url" required>
                                     <img class="card-img-top" src="{{ url('storage/'.$Image) }}" alt="Card image cap" style="width: 104px; height: 104px; margin-top: 12px;">
 
                                     @endif
                                 </div>
                             </div>
                         </div>
-                         <div class="row align-items-center">
-                         <div class="col-md-6 mb-3">
-                                <label for="category_id">Category_id:</label>
-                                <input type="text" name="category_id" value="{{ $category_id }}"class="form-control" placeholder="Category id">
-
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <div class="form-group" style="margin-top: 11px;">
-                                    <textarea class="form-control" id="textAreaExample6" value="{{ $Desc }}" name="Desc" rows="3" placeholder="Description...."></textarea>
+                        <div class="row align-items-center">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label for="Description">Description:</label>
+                                    <textarea class="form-control" id="textAreaExample6" value="{{ $Desc }}" name="Desc" rows="3" placeholder="Description...." required></textarea>
 
                                     @if ($errors->has('Desc'))
                                     <span class="text-danger">{{ $errors->first('Desc') }}</span>
                                     @endif
                                 </div>
-                            </div> 
+                            </div>
 
                         </div>
 

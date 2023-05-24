@@ -51,7 +51,7 @@
             <h2 class="h4">Sub Category</h2>
         </div>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <a href="{{ route('bootstrap-tables', [ 'tid' => '-1' ]) }}" class="btn btn-pill btn-outline-primary">
+            <a href="{{ route('upgrade-to-pro', [ 'tid' => '-1' ]) }}" class="btn btn-pill btn-outline-primary">
                 <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                     </path>
@@ -60,13 +60,12 @@
             </a>
             <div class="btn-group ms-2 ms-lg-3">
                 <form>
-                    <!-- <select class="form-control" name="Name" id="Name">
-                        <option {{is_null(request()->input('Type')) ? 'selected' : ''}} value="">All</option>
-                        <option {{request()->input('Type') == 1 ? 'selected' : ''}} name="1">Scroll</option>
-                        <option {{request()->input('Type') == 2 ? 'selected' : ''}} name="2">Facility</option>
-                        <option {{request()->input('Type') == 3 ? 'selected' : ''}} name="3">Category</option>
-                        <option {{!is_null(request()->input('Type')) && request()->input('Type') == 0 ? 'selected' : ''}} name="0">News</option>
-                    </select> -->
+                    <select class="form-control" name="domain_name" id="domain_name">
+                        <option {{is_null(request()->input('domain_name')) ? 'selected' : ''}} value=""> Domain</option>
+                        @foreach(App\Models\Domain::all() as $key=> $domain_name)
+                        <option value="{{$domain_name->domain_name}}">{{$domain_name->domain_name}}</option>
+                        @endforeach
+                    </select>
             </div>
             <button type="submit" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" style="margin-left: 15px;" data-bs-original-title="" title="">
                 Filter
@@ -97,27 +96,23 @@
                         <p class="card-text">
                             <td><b> {{ $category->Name }} </b></td>
                         </p>
-                        <!-- <p class="card-text">
-                            <td>{{ $category->Sub_Title }}</td>
-                        </p> -->
-                        <?php
-                        // $tid = [ 'tid' =>  $category->id];
-                        // $catid = [ 'catid' =>  $category->id];
-                        ?>
+                        <p class="card-text">
+                            <td>{{ $category->domain_name }}</td>
+                        </p>
                         <div class="E-D-btn">
                             <form action="{{ route('category.destroy',$category->id) }}" method="Post">
                                 @csrf
                                 @method('DELETE')
                                 <div class="btn-group1" style="display: flex; justify-content: space-between;">
-                                    <a href="{{ route('bootstrap-tables', [ 'tid' =>  $category->id, 'catid' =>  $category->id]) }}" class="btn btn-pill btn-outline-success">
+                                    <a href="{{ route('bootstrap-tables', [ 'tid' => '-1' ]) }}" class="btn btn-pill btn-outline-success">
                                         <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                                             </path>
                                         </svg>
-                                        Sub Category
+                                        Category
                                     </a>
                                     <div style="display:flex; gap:10px;">
-                                        <a class="btn btn-primary" href="{{ route('bootstrap-tables', [ 'tid' =>  $category->id]) }}"><i class="fa fa-edit"></i></a>
+                                        <a class="btn btn-primary" href="{{ route('upgrade-to-pro', [ 'tid' =>  $category->id]) }}"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn show_confirm btn-danger"><i class="fa fa-trash"></i></button>
                                     </div>
                                 </div>

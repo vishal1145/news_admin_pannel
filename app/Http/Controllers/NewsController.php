@@ -53,6 +53,7 @@ class NewsController extends Controller
 
         if($isEdit) {
             $news = News::findOrFail($tid);
+            $news->domain_name = $request->input('domain_name');
             $news->Title = $request->input('Title');
             if($request->hasfile('photos'))
             {
@@ -62,14 +63,14 @@ class NewsController extends Controller
                 $file->move('storage/', $filename);
                 $news->photos = $filename;  
             }
-            $news->Domain = $request->input('Domain');
             $news->Date = $request->input('Date');
             $news->Category = $request->input('Category');
-            $news->Category = $request->input('Subcategory');
+            $news->Subcategory = $request->input('Subcategory');
             $news->Containt = $request->input('Containt');
             $news->save();
         } else {
             $image = new News;
+            $image->domain_name = $request->input('domain_name');
             $image->Title = $request->input('Title');
             if($request->hasfile('photos'))
             {
@@ -79,10 +80,9 @@ class NewsController extends Controller
                 $file->move('storage/', $filename);
                 $image->photos = $filename;  
             }
-            $image->Domain = $request->input('Domain');
             $image->Date = $request->input('Date');
             $image->Category = $request->input('Category');
-            $image->Category = $request->input('Subcategory');
+            $image->Subcategory = $request->input('Subcategory');
             $image->Containt = $request->input('Containt');
             $image->save();
         }

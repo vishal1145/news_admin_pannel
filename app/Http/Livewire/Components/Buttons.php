@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Livewire\Components;
+
 use Illuminate\Http\Request;
 use App\Models\Subcategory;
 
@@ -13,16 +14,16 @@ class Buttons extends Component
     {
         // $this->images = Images::select()->get();
         // return view('transactions');
-        $Type = $request->Type;
-    
-        $this->categories= Subcategory::when(!is_null($Type), function ($query) use ($Type) {
-            return $query->where('Type', $Type);
+        $domain_name = $request->domain_name;
+
+        $this->categories = Subcategory::when(!is_null($domain_name), function ($query) use ($domain_name) {
+            return $query->where('domain_name', $domain_name);
         })->latest()->get();
         // $categories = Subcategory::get();
-        return view('components.buttons', compact('subcategories'));
-    
+        return view('components.buttons');
 
-    //     $livewires = Company::orderBy('id','desc')->paginate(5);
-    //    // return view('livewire.users', compact('livewires'));
+
+        //     $livewires = Company::orderBy('id','desc')->paginate(5);
+        //    // return view('livewire.users', compact('livewires'));
     }
 }

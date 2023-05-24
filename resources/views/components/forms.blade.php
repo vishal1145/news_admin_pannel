@@ -88,11 +88,11 @@
         <div class="row" style="margin-bottom: 36px;">
             <div class="col-md-5">
                 <div class="card">
-                    <img class="card-img-top" src="{{ url('storage/'.$livewire->photos) }}" alt="Card image cap" style="height: 190px;">
+                    <img class="card-img-top" src="{{ url('storage/'.$livewire->photos) }}" alt="Card image cap" style="object-fit:cover;">
                     <div class="card-body">
 
                         <p class="card-text">
-                            <td><b> {{ $livewire->Domain }} </b></td>
+                            <td><b> {{ $livewire->domain_name }} </b></td>
                         </p>
                         <p class="card-text">
                             <td>{{ $livewire->Title }}</td>

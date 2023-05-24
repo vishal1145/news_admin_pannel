@@ -59,7 +59,7 @@ class CategoryController extends Controller
 
         //return redirect()->route('forms')->with('success','Teacher has been added successfully.');
         $text = $isEdit ? 'edited' : 'added';
-        return redirect()->route('transactions')->with('success', 'Image has been '.$text.' successfully');
+        return redirect()->route('transactions')->with('success', 'Category has been '.$text.' successfully');
     }
 
     /**

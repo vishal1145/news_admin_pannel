@@ -84,9 +84,54 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div>
-                            <label for="Domain">Domain</label>
-                            <input id="Domain" type="text" name="Domain" value="{{ $Domain }}" class="form-control" placeholder="https://...." required>
-                            @error('Domain')
+                            <label for="Category">Category</label>
+                            <select id="Category" name="Category" value="{{ $Category }}" class="form-select" aria-label="" required>
+                                <option value="Select">Select</option>
+                                @foreach(App\Models\News::all() as $key=> $Cat)
+                                @if($Category == $Cat->Category)
+                                <option @selected( $Cat->Category == $Cat->Category) value="{{ $Cat->Category }}">
+                                    {{ $Cat->Category }}
+                                </option>
+                                @else
+                                <option>
+                                    {{ $Cat->Category }}
+                                </option>
+                                @endif
+                                @endforeach
+                            </select>
+                            @error('Category')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="my-3">
+                            <label for="Subcategory">Sub Category</label>
+                            <select id="Subcategory" name="Subcategory" value="{{ $Subcategory }}" class="form-select " aria-label="" required>
+                                <option value="Select">Select</option>
+                                @foreach(App\Models\Subcategory::all() as $key=> $Subcategory)
+                                <option value="{{$Subcategory->id}}" @if(old('Subcategory',$Subcategory)=='{{$Subcategory->id}}' ) selected @endif>{{$Subcategory->Name}}</option>
+                                @endforeach
+                            </select>
+                            @error('Subcategory')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div style="margin-top: 30px;">
+                        <label for="Domain">Domain</label>
+                            <select class="form-select condition" aria-label="" value="{{ $domain_name }}" name="domain_name" id="domain_name">
+                                <option value="option_select" disabled selected>Domain</option>
+                                @foreach(App\Models\Domain::all() as $key=> $Domain)
+                                @if($domain_name == $Domain->domain_name)
+                                <option @selected( $Domain->domain_name == $Domain->domain_name) value="{{ $Domain->domain_name }}">
+                                    {{ $Domain->domain_name }}
+                                </option>
+                                @else
+                                <option>
+                                    {{ $Domain->domain_name }}
+                                </option>
+                                @endif
+                                @endforeach
+                            </select>
+                            @error('domain_name')
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                             @enderror
                         </div>
@@ -101,30 +146,7 @@
                             <div class="alert alert-danger mt-1 mb-1"></div>
                             @enderror
                         </div>
-                        <div class="my-3">
-                            <label for="Category">Category</label>
-                            <select id="Category" name="Category" value="{{ $Category }}" class="form-select" aria-label="" required>
-                                <option selected></option>
-                                @foreach(App\Models\Category::all() as $key=> $Category)
-                                <option value="{{$Category->id}}" @if(old('Category',$Category)=='{{$Category->id}}' ) selected @endif>{{$Category->Name}}</option>
-                                @endforeach
-                            </select>
-                            @error('Category')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="my-3">
-                            <label for="Subcategory">Sub Category</label>
-                            <select id="Subcategory" name="Subcategory" value="{{ $Subcategory }}" class="form-select " aria-label="" required>
-                                <option selected></option>
-                                @foreach(App\Models\Subcategory::all() as $key=> $Subcategory)
-                                <option value="{{$Subcategory->id}}" @if(old('Subcategory',$Subcategory)=='{{$Subcategory->id}}' ) selected @endif>{{$Subcategory->Name}}</option>
-                                @endforeach
-                            </select>
-                            @error('Subcategory')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
-                        </div>
+
                         <div class="form-group my-3">
                             @if($tid == -1)
 

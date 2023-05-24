@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Illuminate\Http\Request;
 use App\Models\Subcategory;
+use App\Models\domain_name;
 
 use Livewire\Component;
 
@@ -17,7 +18,7 @@ class UpgradeToPro extends Component
     public $Image;
     public $Desc;
     public $category_id;
-    public $Sub_Title;
+    public $domain_name;
     public $image;
 
     public $tid;
@@ -36,6 +37,7 @@ class UpgradeToPro extends Component
         $this->isEdit = $this->editId != -1;
 
 
+        $this->domain_name = "";
         $this->Name = "";
         $this->Image = "";
         $this->category_id = "";
@@ -54,6 +56,7 @@ class UpgradeToPro extends Component
         if($this->isEdit) {
             $image = Subcategory::findOrFail($this->editId);
             
+            $this->domain_name = $image->domain_name;
             $this->Name = $image->Name;
             $this->Image = $image->Image;
             $this->category_id = $image->category_id;

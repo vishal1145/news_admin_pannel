@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\News;
+use App\Models\Domain;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
@@ -20,7 +21,7 @@ class ProfileExample extends Component
     public $test;
     public $isEdit;
     public $Title;
-    public $Domain;
+    public $domain_name;
     public $Date;
     public $Category;
     public $Subcategory;
@@ -41,7 +42,7 @@ class ProfileExample extends Component
 
 
         $this->Title = "";
-        $this->Domain = "";
+        $this->domain_name = "";
         $this->Date = "";
         $this->Category = "";
         $this->Subcategory = "";
@@ -54,10 +55,10 @@ class ProfileExample extends Component
             $news = News::findOrFail($this->editId);
             
             $this->Title = $news->Title;
-            $this->Domain = $news->Domain;
+            $this->domain_name = $news->domain_name;
             $this->Date = $news->Date;
             $this->Category = $news->Category;
-            $this->Category = $news->Subcategory;
+            $this->Subcategory = $news->Subcategory;
             $this->Containt = $news->Containt;
             $this->photos = $news->photos;
         }   

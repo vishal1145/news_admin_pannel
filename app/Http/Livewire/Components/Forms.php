@@ -20,15 +20,10 @@ class Forms extends Component
         // ->paginate(10);
         // return view('components.forms');
         $Category = $request->Category;
-        $Subcategory = $request->Subcategory;
+        
 
         $this->livewires = News::when(!is_null($Category), function ($query) use ($Category) {
             return $query->where('Category', $Category);
-        })->latest()->get();
-
-
-        $this->livewires = News::when(!is_null($Subcategory), function ($query) use ($Subcategory) {
-            return $query->where('Subcategory', $Subcategory);
         })->latest()->get();
 
         return view('components.forms');
