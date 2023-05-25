@@ -56,12 +56,20 @@
 
             <div class="btn-group ms-2 ms-lg-3">
                 <form>
-                    <select class="form-control" name="Category" id="Category">
-                        <option {{is_null(request()->input('Category')) ? 'selected' : ''}} value=""> Category</option>
-                        @foreach(App\Models\Category::all() as $key=> $Category)
-                        <option value="{{$Category->Name}}">{{$Category->Name}}</option>
+                    <select class="form-control" name="domain_name" id="domain_name">
+                        <option {{is_null(request()->input('domain_name')) ? 'selected' : ''}} value=""> Domain</option>
+                        @foreach(App\Models\Domain::all() as $key=> $domain_name)
+                        <option value="{{$domain_name->domain_name}}">{{$domain_name->domain_name}}</option>
                         @endforeach
                     </select>
+            </div>
+            <div class="btn-group ms-2 ms-lg-3">
+                <select class="form-control" name="Category" id="Category">
+                    <option {{is_null(request()->input('Category')) ? 'selected' : ''}} value=""> Category</option>
+                    @foreach(App\Models\Category::all() as $key=> $Category)
+                    <option value="{{$Category->Name}}">{{$Category->Name}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <button type="submit" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" style="margin-left: 15px;">

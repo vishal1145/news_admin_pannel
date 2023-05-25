@@ -73,11 +73,11 @@ class ProfileExample extends Component
         return view('livewire.profile-example', ['livewire' => $livewire]);
     }
 
-    public function edit(News $livewire)
-    {
-        $test = "test 1213";
-        return view('livewire.profile-example',compact('livewire'));
-    }
+    // public function edit(News $livewire)
+    // {
+    //     $test = "test 1213";
+    //     return view('livewire.profile-example',compact('livewire'));
+    // }
 
     // /**
     // * Update the specified resource in storage.
