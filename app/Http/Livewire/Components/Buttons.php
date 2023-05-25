@@ -14,12 +14,41 @@ class Buttons extends Component
     {
         // $this->images = Images::select()->get();
         // return view('transactions');
+       
+        
+        $Name = $request->Name;
         $domain_name = $request->domain_name;
+        
 
-        $this->categories = Subcategory::when(!is_null($domain_name), function ($query) use ($domain_name) {
-            return $query->where('domain_name', $domain_name);
-        })->latest()->get();
-        // $categories = Subcategory::get();
+        if ($request->filled('Name') && $request->filled('domain_name')) {
+            
+            $this->categories = Subcategory::when(!is_null($domain_name), function ($query) use ($domain_name) {
+                return $query->where('domain_name', $domain_name);
+            })->latest()->get();
+
+            $this->categories = Subcategory::when(!is_null($Name), function ($query) use ($Name) {
+                return $query->where('Name', $Name);
+            })->latest()->get();
+
+        } else if ($request->filled('domain_name')) {
+            $this->categories = Subcategory::when(!is_null($domain_name), function ($query) use ($domain_name) {
+                return $query->where('domain_name', $domain_name);
+            })->latest()->get();
+
+        }else if ($request->filled('Name')) {
+            $this->categories = Subcategory::when(!is_null($Name), function ($query) use ($Name) {
+                return $query->where('Name', $Name);
+            })->latest()->get();
+            
+        } else {
+            $this->categories = Subcategory::when(!is_null($domain_name), function ($query) use ($domain_name) {
+                return $query->where('domain_name', $domain_name);
+            })->latest()->get();
+
+            $this->categories = Subcategory::when(!is_null($Name), function ($query) use ($Name) {
+                return $query->where('Name', $Name);
+            })->latest()->get();
+        }
         return view('components.buttons');
 
 

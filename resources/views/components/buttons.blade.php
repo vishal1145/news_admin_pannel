@@ -51,13 +51,13 @@
             <h2 class="h4">Sub Category</h2>
         </div>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <a href="{{ route('upgrade-to-pro', [ 'tid' => '-1' ]) }}" class="btn btn-pill btn-outline-primary">
+            <!-- <a href="{{ route('upgrade-to-pro', [ 'tid' => '-1' ]) }}" class="btn btn-pill btn-outline-primary">
                 <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                     </path>
                 </svg>
                 New Sub Category
-            </a>
+            </a> -->
             <div class="btn-group ms-2 ms-lg-3">
                 <form>
                     <select class="form-control" name="domain_name" id="domain_name">
@@ -67,6 +67,15 @@
                         @endforeach
                     </select>
             </div>
+            <div class="btn-group ms-2 ms-lg-3">
+                <select class="form-control" name="Name" id="Name">
+                    <option {{is_null(request()->input('Name')) ? 'selected' : ''}} value=""> Category</option>
+                    @foreach(App\Models\Category::all() as $key=> $Category)
+                    <option value="{{$Category->Name}}">{{$Category->Name}}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <button type="submit" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" style="margin-left: 15px;" data-bs-original-title="" title="">
                 Filter
             </button>
@@ -104,13 +113,13 @@
                                 @csrf
                                 @method('DELETE')
                                 <div class="btn-group1" style="display: flex; justify-content: space-between;">
-                                    <a href="{{ route('bootstrap-tables', [ 'tid' => '-1' ]) }}" class="btn btn-pill btn-outline-success">
+                                    <!-- <a href="{{ route('bootstrap-tables', [ 'tid' => '-1' ]) }}" class="btn btn-pill btn-outline-success">
                                         <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                                             </path>
                                         </svg>
                                         Category
-                                    </a>
+                                    </a> -->
                                     <div style="display:flex; gap:10px;">
                                         <a class="btn btn-primary" href="{{ route('upgrade-to-pro', [ 'tid' =>  $category->id]) }}"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn show_confirm btn-danger"><i class="fa fa-trash"></i></button>

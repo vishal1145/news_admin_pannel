@@ -106,9 +106,17 @@
                         <div class="my-3">
                             <label for="Subcategory">Sub Category</label>
                             <select id="Subcategory" name="Subcategory" value="{{ $Subcategory }}" class="form-select " aria-label="" required>
-                                <option value="Select">Select</option>
-                                @foreach(App\Models\Subcategory::all() as $key=> $Subcategory)
-                                <option value="{{$Subcategory->id}}" @if(old('Subcategory',$Subcategory)=='{{$Subcategory->id}}' ) selected @endif>{{$Subcategory->Name}}</option>
+                            <option value="Select">Select</option>
+                                @foreach(App\Models\News::all() as $key=> $Sub)
+                                @if($Subcategory == $Sub->Subcategory)
+                                <option @selected( $Sub->Subcategory == $Sub->Subcategory) value="{{ $Sub->Subcategory }}">
+                                    {{ $Sub->Subcategory }}
+                                </option>
+                                @else
+                                <option>
+                                    {{ $Sub->Subcategory }}
+                                </option>
+                                @endif
                                 @endforeach
                             </select>
                             @error('Subcategory')

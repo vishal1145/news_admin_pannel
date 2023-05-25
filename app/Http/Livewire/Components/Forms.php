@@ -39,8 +39,8 @@ class Forms extends Component
                 return $query->where('Category', $Category);
             })->latest()->get();
 
-            $this->livewires = News::when(!is_null($Category), function ($query) use ($Category) {
-                return $query->where('Category', $Category);
+            $this->livewires = News::when(!is_null($domain_name), function ($query) use ($domain_name) {
+                return $query->where('domain_name', $domain_name);
             })->latest()->get();
 
         } else if ($request->filled('domain_name')) {
@@ -55,7 +55,7 @@ class Forms extends Component
             
         } else {
             $this->livewires = News::when(!is_null($domain_name), function ($query) use ($domain_name) {
-                return $query->where('Category', $domain_name);
+                return $query->where('domain_name', $domain_name);
             })->latest()->get();
 
             $this->livewires = News::when(!is_null($Category), function ($query) use ($Category) {

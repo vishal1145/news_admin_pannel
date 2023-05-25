@@ -53,7 +53,7 @@
               <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
             </svg></span>
         </span> -->
-        <!-- <div class="multi-level collapse show" role="list" id="submenu-laravel" aria-expanded="false">
+      <!-- <div class="multi-level collapse show" role="list" id="submenu-laravel" aria-expanded="false">
           <ul class="flex-column nav">
             <li class="nav-item {{ Request::segment(1) == 'profile' ? 'active' : '' }}">
               <a href="/profile" class="nav-link">
@@ -64,7 +64,7 @@
                 <span class="sidebar-text">Add Student</span>
               </a>
             </li> -->
-            <!-- <li class="nav-item {{ Request::segment(1) == 'users' ? 'active' : '' }}">
+      <!-- <li class="nav-item {{ Request::segment(1) == 'users' ? 'active' : '' }}">
               <a href="/users" class="nav-link">
                 <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
@@ -72,12 +72,12 @@
                 <span class="sidebar-text">Manage Student</span>
               </a>
             </li> -->
-            <!-- <li class="nav-item {{ Request::segment(1) == 'student' ? 'active' : '' }}">
+      <!-- <li class="nav-item {{ Request::segment(1) == 'student' ? 'active' : '' }}">
               <a href="/student" class="nav-link">
                 <span class="sidebar-text">Student Info1</span>
               </a>
             </li> -->
-          <!-- </ul>
+      <!-- </ul>
         </div>
       </li> -->
       <!-- <li class="nav-item">
@@ -142,20 +142,20 @@
                 <span class="sidebar-text">Manage Category</span>
               </a>
             </li>
-          </ul>
-        </div>
-      </li>
-
-      
-      <li class="nav-item {{ Request::segment(1) == 'lock' ? 'active' : '' }}">
+            <li class="nav-item {{ Request::segment(1) == 'lock' ? 'active' : '' }}">
               <a class="nav-link" href="/buttons">
                 <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                 </svg>
-                <span class="sidebar-text" style="margin-left: 12px;">Manage SubCategory</span>
+                <span class="sidebar-text">SubCategory</span>
               </a>
-            
+            </li>
+          </ul>
+        </div>
       </li>
+
+
+
       <!-- <li class="nav-item">
         <a href="https://themesberg.com/product/laravel/volt-pro-admin-dashboard-template" target="_blank" class="nav-link d-flex justify-content-between">
           <span>
@@ -224,7 +224,12 @@
       <li class="nav-item">
         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#submenu-pages1">
           <span>
-            <span class="sidebar-icon"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="white"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg></span>
+            <span class="sidebar-icon"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="white"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <line x1="20" y1="8" x2="20" y2="14"></line>
+                <line x1="23" y1="11" x2="17" y2="11"></line>
+              </svg></span>
             <span class="sidebar-text" style="margin-left: 12px;">News</span>
           </span>
           <span class="link-arrow"><svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -285,7 +290,7 @@
           class="multi-level collapse {{ Request::segment(1) == 'buttons' || Request::segment(1) == 'notifications' || Request::segment(1) == 'forms' || Request::segment(1) == 'modals' || Request::segment(1) == 'typography' ? 'show' : '' }}"
           role="list" id="submenu-components" aria-expanded="false">
           <ul class="flex-column nav"> -->
-        <!-- <li class="nav-item {{ Request::segment(1) == 'buttons' ? 'active' : '' }}">
+      <!-- <li class="nav-item {{ Request::segment(1) == 'buttons' ? 'active' : '' }}">
               <a class="nav-link" href="/buttons">
                 <span class="sidebar-text">Buttons</span>
               </a>
@@ -309,7 +314,7 @@
               <a class="nav-link" href="/typography">
                 <span class="sidebar-text">Typography</span>
               </a>
-            </li> --> 
+            </li> -->
     </ul>
   </div>
   </li>
