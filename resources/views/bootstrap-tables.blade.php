@@ -133,21 +133,29 @@
                                 <input type="text" name="Name" value="{{ $Name }}" class="form-control" placeholder="Name" required>
 
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6 mb-3">
                                 <div>
                                     @if($tid == -1)
 
                                     <label for="last_name">Image:</label>
-                                    <input type="file" name="Image" class="form-control" placeholder="Image_url" required>
+                                    <input type="file" name="Image" class="form-control" placeholder="Image_url" >
 
                                     @else
 
                                     <label for="last_name">Image:</label>
-                                    <input type="file" name="Image" class="form-control" placeholder="Image_url" required>
+                                    <input type="file" name="Image" class="form-control" placeholder="Image_url" >
                                     <img class="card-img-top" src="{{ url('storage/'.$Image) }}" alt="Card image cap" style="width: 104px; height: 104px; margin-top: 12px;">
 
                                     @endif
                                 </div>
+
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="Slug">Slug:</label>
+                                <input type="text" name="Slug" value="{{ $Slug }}" class="form-control" placeholder="Slug" required>
+
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -161,6 +169,18 @@
                                     @endif
                                 </div>
                             </div>
+                            @if($Display_in_home == 1)
+                            <label><input type="checkbox" name="Display_in_home" value="{{ $Display_in_home }}" checked> Display in Home</label>
+                            @else
+                            <label><input type="checkbox" name="Display_in_home" value="{{ $Display_in_home }}"> Display in Home</label>
+                            @endif
+
+
+                            @if($Display_in_header == 1)
+                            <label><input type="checkbox" name="Display_in_header" value="{{ $Display_in_header }}" checked> Display in Header</label>
+                            @else
+                            <label><input type="checkbox" name="Display_in_header" value="{{ $Display_in_header }}"> Display in Header</label>
+                            @endif
 
                         </div>
 
@@ -172,35 +192,6 @@
             </div>
 
 </body>
-<script type="text/javascript">
-    //     $(document).ready(function(){
-    //     // $('.showing').hide();
-    //     $('.condition').change(
-    //         function(){
-    //             if(this.value == "Scroll"){
-    //                 $('.showing').hide();
-    //             }
-    //             else {
-    //                 $('.showing').show();
-    //             }
-    //         }
-    //     )
-    // });
-
-    // $(document).ready(function(){
-    //     $('#showing1').hide();
-    //     $('#condition').change(
-    //         function(){
-    //             if(this.value == "Scroll"){
-    //                 $('#showing1').hide();
-    //             }
-    //             else {
-    //                 $('#showing1').show();
-    //             }
-    //         }
-    //     )
-    // });
-</script>
 <script>
     $(document).ready(function() {
         $("#myform").on("submit", function() {

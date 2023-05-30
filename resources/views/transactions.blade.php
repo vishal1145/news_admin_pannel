@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Pannel</title>
+    <link href="https://semantic-ui.com/dist/semantic.min.css" rel="stylesheet" />
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
 </head>
 <style>
@@ -14,9 +16,20 @@
         max-width: 100%;
     }
 
-    .card {
+    input[type="checkbox"]:disabled+label::before {
+        background: blue;
+    }
+
+    input[type="checkbox"]:disabled+label:hover::before {
+        background: blue;
+        border: 1px solid #d4d4d5;
+    }
+
+    .chckbox .card {
         margin-top: 1.5rem;
     }
+
+
 
     .btn-group1 {
         text-align: right;
@@ -28,6 +41,13 @@
         border-radius: 10px;
         border: 1px solid lightgreen;
         color: lightgreen;
+    }
+
+    .btn-outline-danger {
+        height: 65%;
+        width: 55%;
+        margin: 6px;
+        margin-left: 55px;
     }
 </style>
 
@@ -62,7 +82,7 @@
             <div class="btn-group ms-2 ms-lg-3">
                 <form>
                     <select class="form-control" name="domain_name" id="domain_name">
-                        <option {{is_null(request()->input('domain_name')) ? 'selected' : ''}} value=""> Domain</option>
+                        <option disabled selected {{is_null(request()->input('domain_name')) ? 'selected' : ''}} value=""> Domain</option>
                         @foreach(App\Models\Domain::all() as $key=> $domain_name)
                         <option value="{{$domain_name->domain_name}}">{{$domain_name->domain_name}}</option>
                         @endforeach
@@ -93,10 +113,57 @@
                 <div class="card">
                     <img class="card-img-top" src="{{ url('storage/'.$category->Image) }}" alt="Card image cap">
                     <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text">
+                                    <td><b> {{ $category->Name }} </b></td>
+                                </p>
+                            </div>
+                            <div class="col">
+                                <!-- @if($category->Display_in_home == 1)
+                                <button type="button" class="btn btn-outline-danger">
+                                    Home
+                                </button>
+                                @else
 
-                        <p class="card-text">
-                            <td><b> {{ $category->Name }} </b></td>
-                        </p>
+                                @endif
+
+                                @if($category->Display_in_header == 1)
+                                <button type="button" class="btn btn-outline-danger">
+                                    Header
+                                </button>
+                                @else
+
+                                @endif -->
+                                @if($category->Display_in_home == 1)
+                                <div class="ui disabled checkbox">
+                                    <input type="checkbox" name="Display_in_home" value="{{ $category->Display_in_home }}" disabled="disabled">
+                                    <label style="margin-left: 68px; margin-bottom: -7px;">Home</label><br>
+                                </div>
+                                @else
+                                <div class="ui disabled checkbox">
+                                    <input type="checkbox" name="Display_in_home" value="{{ $category->Display_in_home }}" disable="disabled">
+                                    <label style="margin-left: 68px; margin-bottom: -7px;">Home</label><br>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                @if($category->Display_in_header == 1)
+                                <div class="ui disabled checkbox">
+                                    <input type="checkbox" name="Display_in_header" value="{{ $category->Display_in_header }}" disabled="disabled">
+                                    <label style="margin-left: 255px;">Header</label>
+                                </div>
+                                @else
+                                <div class="ui disabled checkbox">
+                                    <input type="checkbox" name="Display_in_header" value="{{ $category->Display_in_header }}" disable="disabled">
+                                    <label style="margin-left: 255px;">Header</label>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+
                         <p class="card-text">
                             <td>{{ $category->domain_name }}</td>
                         </p>

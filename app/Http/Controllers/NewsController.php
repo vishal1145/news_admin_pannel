@@ -64,8 +64,8 @@ class NewsController extends Controller
                 $news->photos = $filename;  
             }
             $news->Date = $request->input('Date');
-            $news->Category = $request->input('Category');
-            $news->Subcategory = $request->input('Subcategory');
+            $news->Name = $request->input('Name');
+            $news->SubCatName = $request->input('SubCatName');
             $news->Containt = $request->input('Containt');
             $news->save();
         } else {
@@ -81,8 +81,8 @@ class NewsController extends Controller
                 $image->photos = $filename;  
             }
             $image->Date = $request->input('Date');
-            $image->Category = $request->input('Category');
-            $image->Subcategory = $request->input('Subcategory');
+            $image->Name = $request->input('Name');
+            $image->SubCatName = $request->input('SubCatName');
             $image->Containt = $request->input('Containt');
             $image->save();
         }

@@ -85,46 +85,46 @@
                     <div class="col-md-4">
                         <div>
                             <label for="Category">Category</label>
-                            <select id="Category" name="Category" value="{{ $Category }}" class="form-select" aria-label="" required>
-                                <option value="Select">Select</option>
-                                @foreach(App\Models\News::all() as $key=> $Cat)
-                                @if($Category == $Cat->Category)
-                                <option @selected( $Cat->Category == $Cat->Category) value="{{ $Cat->Category }}">
-                                    {{ $Cat->Category }}
+                            <select id="Name" name="Name" value="{{ $Name }}" class="form-select" aria-label="" required>
+                                <option value="Select" disabled selected>Select</option>
+                                @foreach(App\Models\Category::all() as $key=> $Cat)
+                                @if($Name == $Cat->Name)
+                                <option @selected( $Cat->Name == $Cat->Name) value="{{ $Cat->Name }}">
+                                    {{ $Cat->Name }}
                                 </option>
                                 @else
                                 <option>
-                                    {{ $Cat->Category }}
+                                    {{ $Cat->Name }}
                                 </option>
                                 @endif
                                 @endforeach
                             </select>
-                            @error('Category')
+                            @error('Name')
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="my-3">
                             <label for="Subcategory">Sub Category</label>
-                            <select id="Subcategory" name="Subcategory" value="{{ $Subcategory }}" class="form-select " aria-label="" required>
-                            <option value="Select">Select</option>
-                                @foreach(App\Models\News::all() as $key=> $Sub)
-                                @if($Subcategory == $Sub->Subcategory)
-                                <option @selected( $Sub->Subcategory == $Sub->Subcategory) value="{{ $Sub->Subcategory }}">
-                                    {{ $Sub->Subcategory }}
+                            <select id="SubCatName" name="SubCatName" value="{{ $SubCatName }}" class="form-select " aria-label="" required>
+                                <option value="Select" disabled selected>Select</option>
+                                @foreach(App\Models\Subcategory::all() as $key=> $Sub)
+                                @if($SubCatName == $Sub->SubCatName)
+                                <option @selected( $Sub->SubCatName == $Sub->SubCatName) value="{{ $Sub->SubCatName }}">
+                                    {{ $Sub->SubCatName }}
                                 </option>
                                 @else
                                 <option>
-                                    {{ $Sub->Subcategory }}
+                                    {{ $Sub->SubCatName }}
                                 </option>
                                 @endif
                                 @endforeach
                             </select>
-                            @error('Subcategory')
+                            @error('SubCatName')
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                             @enderror
                         </div>
                         <div style="margin-top: 30px;">
-                        <label for="Domain">Domain</label>
+                            <label for="Domain">Domain</label>
                             <select class="form-select condition" aria-label="" value="{{ $domain_name }}" name="domain_name" id="domain_name">
                                 <option value="option_select" disabled selected>Domain</option>
                                 @foreach(App\Models\Domain::all() as $key=> $Domain)

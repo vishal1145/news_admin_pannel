@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('Domain');
+            $table->string('domain_name');
             $table->string('Name');
             $table->string('Image');
+            $table->string('Slug');
             $table->string('Desc');
-            // $table->string('Sub_Title');
+            $table->boolean('Display_in_home');
+            $table->boolean('Display_in_header');
             $table->timestamps();
         });
     }

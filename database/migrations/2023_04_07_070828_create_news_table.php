@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('photos');
             $table->string('Domain');
             $table->date('Date');
-            $table->string('Category');
+            $table->string('Name');
             $table->string('Subcategory');
             $table->string('Containt');
             $table->timestamps();

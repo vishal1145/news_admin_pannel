@@ -23,8 +23,8 @@ class ProfileExample extends Component
     public $Title;
     public $domain_name;
     public $Date;
-    public $Category;
-    public $Subcategory;
+    public $Name;
+    public $SubCatName;
     public $Containt;
     public $photos;
     public $news;
@@ -44,8 +44,8 @@ class ProfileExample extends Component
         $this->Title = "";
         $this->domain_name = "";
         $this->Date = "";
-        $this->Category = "";
-        $this->Subcategory = "";
+        $this->Name = "";
+        $this->SubCatName = "";
         $this->Containt ="";
         $this->photos = "";
         $this->news = "";
@@ -57,8 +57,8 @@ class ProfileExample extends Component
             $this->Title = $news->Title;
             $this->domain_name = $news->domain_name;
             $this->Date = $news->Date;
-            $this->Category = $news->Category;
-            $this->Subcategory = $news->Subcategory;
+            $this->Name = $news->Name;
+            $this->SubCatName = $news->SubCatName;
             $this->Containt = $news->Containt;
             $this->photos = $news->photos;
         }   

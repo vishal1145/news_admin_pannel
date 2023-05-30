@@ -16,8 +16,11 @@ class BootstrapTables extends Component
     public $Name;
     public $Image;
     public $Desc;
+    public $Display_in_home;
+    public $Display_in_header;
     public $Sub_Title;
     public $image;
+    public $Slug;
     public $domain_name;
     public $selectedID;
     public $tid;
@@ -39,8 +42,10 @@ class BootstrapTables extends Component
         $this->domain_name = "";
         $this->Name = "";
         $this->Image = "";
+        $this->Slug = "";
         $this->Desc = "";
-        // $this->Sub_Title = "";
+        $this->Display_in_home = "";
+        $this->Display_in_header = "";
 
         // $isSubcategory = false;
         // if(isset($this->catid)){
@@ -57,8 +62,10 @@ class BootstrapTables extends Component
             $this->domain_name = $image->domain_name;
             $this->Name = $image->Name;
             $this->Image = $image->Image;
+            $this->Slug = $image->Slug;
             $this->Desc = $image->Desc;
-            // $this->Sub_Title = $image->Sub_Title;
+            $this->Display_in_home = $image->Display_in_home;
+            $this->Display_in_header = $image->Display_in_header;
 
             // $this->categories =  Domain::pluck('id', 'domain_name');
             // $this->selectedID = 2;

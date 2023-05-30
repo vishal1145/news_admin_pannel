@@ -26,7 +26,7 @@ class SubcategoryController extends Controller
         if($isEdit) {
             $student = Subcategory::findOrFail($tid);
             $student->domain_name = $request->input('domain_name');
-            $student->Name = $request->input('Name');
+            $student->SubCatName = $request->input('SubCatName');
 
             if($request->hasfile('Image'))
             {
@@ -44,7 +44,7 @@ class SubcategoryController extends Controller
         } else {
             $image = new Subcategory;
             $image->domain_name = $request->input('domain_name');
-            $image->Name = $request->input('Name');
+            $image->SubCatName = $request->input('SubCatName');
             if($request->hasfile('Image'))
                 {
                     $file = $request->file('Image');

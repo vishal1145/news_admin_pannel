@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('domain_name');
             $table->integer('category_id');
-            $table->string('Name');
+            $table->string('SubCatName');
             $table->string('Image');
             $table->string('Desc');
             // $table->string('Sub_Title');
