@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('Date');
             $table->string('Name');
             $table->string('SubCatName');
-            $table->string('Containt');
+            $table->longText('Containt');
             $table->timestamps();
         });
     }

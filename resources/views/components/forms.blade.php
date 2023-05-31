@@ -109,7 +109,7 @@
                             <td>{{ $livewire->Date }}</td>
                         </p>
                         <p class="card-text">
-                            <td>{{ $livewire->Category }} / {{ $livewire->Subcategory }}</td>
+                            <td>{{ $livewire->Name }} / {{ $livewire->SubCatName }}</td>
                         </p>
                         <div class="E-D-btn">
                             <form action="{{ route('livewire.destroy',$livewire->id) }}" method="Post">
