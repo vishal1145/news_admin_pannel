@@ -137,7 +137,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="Name">Name:</label>
-                                <input type="text" name="Name" value="{{ $Name }}" class="form-control" placeholder="Name" required>
+                                <input type="text" name="SubCatName" value="{{ $SubCatName }}" class="form-control" placeholder="Name" required>
 
                             </div>
                             <div class="col-md-6 mb-3">

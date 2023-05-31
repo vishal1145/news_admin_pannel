@@ -103,7 +103,7 @@
                     <div class="card-body">
 
                         <p class="card-text">
-                            <td><b> {{ $category->Name }} </b></td>
+                            <td><b> {{ $category->SubCatName }} </b></td>
                         </p>
                         <p class="card-text">
                             <td>{{ $category->domain_name }}</td>

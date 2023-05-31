@@ -14,7 +14,7 @@ class UpgradeToPro extends Component
     public $livewire;
     public $test;
     public $isEdit;
-    public $Name;
+    public $SubCatName;
     public $Image;
     public $Desc;
     public $category_id;
@@ -38,7 +38,7 @@ class UpgradeToPro extends Component
 
 
         $this->domain_name = "";
-        $this->Name = "";
+        $this->SubCatName = "";
         $this->Image = "";
         $this->category_id = "";
         $this->Desc = "";
@@ -57,7 +57,7 @@ class UpgradeToPro extends Component
             $image = Subcategory::findOrFail($this->editId);
             
             $this->domain_name = $image->domain_name;
-            $this->Name = $image->Name;
+            $this->SubCatName = $image->SubCatName;
             $this->Image = $image->Image;
             $this->category_id = $image->category_id;
             $this->Desc = $image->Desc;

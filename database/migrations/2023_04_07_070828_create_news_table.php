@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('Title');
             $table->string('photos');
-            $table->string('Domain');
+            $table->string('domain_name');
             $table->date('Date');
             $table->string('Name');
-            $table->string('Subcategory');
+            $table->string('SubCatName');
             $table->string('Containt');
             $table->timestamps();
         });
