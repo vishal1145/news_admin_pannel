@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('Title');
             $table->string('photos');
             $table->string('domain_name');
-            $table->date('Date');
+            $table->string('Slug');
+            $table->timestamp('Date');
             $table->string('Name');
             $table->string('SubCatName');
             $table->longText('Containt');

@@ -22,6 +22,7 @@ class ProfileExample extends Component
     public $isEdit;
     public $Title;
     public $domain_name;
+    public $Slug;
     public $Date;
     public $Name;
     public $SubCatName;
@@ -43,6 +44,7 @@ class ProfileExample extends Component
 
         $this->Title = "";
         $this->domain_name = "";
+        $this->Slug = "";
         $this->Date = "";
         $this->Name = "";
         $this->SubCatName = "";
@@ -56,6 +58,7 @@ class ProfileExample extends Component
             
             $this->Title = $news->Title;
             $this->domain_name = $news->domain_name;
+            $this->Slug = $news->Slug;
             $this->Date = $news->Date;
             $this->Name = $news->Name;
             $this->SubCatName = $news->SubCatName;

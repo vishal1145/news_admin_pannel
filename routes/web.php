@@ -62,6 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('category', CategoryController::class);
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/profile-example', ProfileExample::class)->name('profile-example');
+    Route::post('/upload', [NewsController::class, 'uploadimage'])->name('ckeditor.upload');
     Route::get('/users', Users::class)->name('users');
     Route::post('/category', [CategoryController::class,'store'])->name('category.store');
     Route::post('/subcategory', [SubcategoryController::class,'store'])->name('subcategory.store');

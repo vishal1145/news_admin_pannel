@@ -5,9 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin Pannel</title>
     <script src="../../assets/js/plugins/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- <script>
+        $(document).ready(function() {
+            // Your other JavaScript code...
+
+            // AJAX request for image upload
+            $("#myform").on("submit", function() {
+                // Include the CSRF token in the AJAX request headers
+                $.ajax({
+                    url: '/upload-image',
+                    type: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    // Other AJAX settings...
+                });
+
+                // Prevent the form from submitting normally
+                return false;
+            });
+        });
+    </script> -->
     <style>
         #pageloader {
             background: rgba(255, 255, 255, 0.8);
@@ -48,7 +70,7 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Faculty List</li>
+                        <li class="breadcrumb-item active" aria-current="page">News List</li>
                     </ol>
                 </nav>
                 @if($tid == -1)
@@ -77,8 +99,9 @@
                 {{ session('status') }}
             </div>
             @endif
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <form action="{{ route('livewire.store') }}" id="myform" method="POST" enctype="multipart/form-data">
-                @csrf
+                {{ csrf_field() }}
 
                 <input type="hidden" name="tid" value="{{ $editId }}">
                 <div class="row">
@@ -144,6 +167,10 @@
                             @enderror
                         </div>
                         <div class="my-3">
+                            <label for="Slug">Slug:</label>
+                            <input type="text" name="Slug" value="{{ $Slug }}" class="form-control" placeholder="Slug" required>
+                        </div>
+                        <div class="my-3">
                             <label for="Type">Title</label>
                             <input id="Title" type="text" name="Title" value="{{ $Title }}" class="form-control" placeholder="Title" required>
                         </div>
@@ -179,7 +206,7 @@
                     <div class="col-md-8">
                         <div class="col-md-12 mb-3">
                             <label for="Containt">Containt</label>
-                            <textarea class="ckeditor form-control" value="{{ $Containt }}" name="Containt">{!! $Containt !!}</textarea>
+                            <textarea class="ckeditor form-control" id="editor" value="{{ $Containt }}" name="Containt" required>{!! $Containt !!}</textarea>
                             @error('Containt')
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                             @enderror
@@ -194,7 +221,7 @@
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $("document").ready(function() {
         $('select[name="Subcategory"]').on('change', function() {
             var catId = $(this).val();
@@ -218,7 +245,7 @@
 
 
     });
-</script>
+</script> -->
 <script>
     $(document).ready(function() {
         $("#myform").on("submit", function() {
@@ -234,11 +261,21 @@
         $scope.phoneNumbr = /^([2-9])(?!\1+$)\d{9}$/;
     });
 </script>
-<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.ckeditor').ckeditor();
-    });
+<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'), {
+            ckfinder: {
+                uploadUrl: '{{ route("ckeditor.upload") }}?_token={{ csrf_token() }}'
+            }
+
+        })
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
 </script>
 
 </html>

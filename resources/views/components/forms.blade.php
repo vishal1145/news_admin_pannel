@@ -12,7 +12,9 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
     {{-- toastr --}}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 </head>
 <style>
     .outline {
@@ -22,6 +24,22 @@
 
     .line {
         line-height: 0.5;
+    }
+
+    .img-hover {
+        transition: transform 0.3s;
+    }
+
+    .img-hover:hover {
+        transform: scale(0.8);
+    }
+
+    .btn-hover {
+        transition: transform 0.3s;
+    }
+
+    .btn-hover:hover {
+        transform: scale(2.1);
     }
 </style>
 
@@ -96,7 +114,7 @@
         <div class="row" style="margin-bottom: 36px;">
             <div class="col-md-5">
                 <div class="card">
-                    <img class="card-img-top" src="{{ url('storage/'.$livewire->photos) }}" alt="Card image cap" style="object-fit:cover;">
+                    <img class="card-img-top img-fluid img-hover" src="{{ url('storage/'.$livewire->photos) }}" alt="Image" style="object-fit:cover;">
                     <div class="card-body">
 
                         <p class="card-text">
@@ -115,10 +133,10 @@
                             <form action="{{ route('livewire.destroy',$livewire->id) }}" method="Post">
                                 @csrf
                                 @method('DELETE')
-                                <div class="btn-group1" style="display: flex; justify-content: space-between;">
+                                <div class="btn-group1" style="display: flex; justify-content: end;">
                                     <div style="display:flex; gap:10px;">
-                                        <a class="btn btn-primary" href="{{ route('profile-example', [ 'tid' =>  $livewire->id]) }}"><i class="fa fa-edit"></i></a>
-                                        <button type="submit" class="btn show_confirm btn-danger"><i class="fa fa-trash"></i></button>
+                                        <a class="btn btn-primary" href="{{ route('profile-example', [ 'tid' =>  $livewire->id]) }}"><i class="fa fa-edit btn-hover"></i></a>
+                                        <button type="submit" class="btn show_confirm btn-danger"><i class="fa fa-trash btn-hover"></i></button>
                                     </div>
                                 </div>
                             </form>
@@ -126,7 +144,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7" style="max-height: 440px;overflow-y: scroll;">
+            <div class="col-md-7" style="max-height: 506px; overflow-y: scroll; text-align: justify;">
                 <td>{!! str_replace('_', ' ', $livewire->Containt) !!}</td>
             </div>
         </div>
