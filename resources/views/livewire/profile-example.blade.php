@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin Pannel</title>
     <script src="../../assets/js/plugins/sweetalert.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
     <!-- <script>
         $(document).ready(function() {
             // Your other JavaScript code...
@@ -30,6 +30,8 @@
             });
         });
     </script> -->
+
+
     <style>
         #pageloader {
             background: rgba(255, 255, 255, 0.8);
@@ -106,6 +108,10 @@
                 <input type="hidden" name="tid" value="{{ $editId }}">
                 <div class="row">
                     <div class="col-md-4">
+                        <div class="my-3">
+                            <label for="category_id">Category ID:</label>
+                            <input type="text" name="category_id" value="{{ $category_id }}" class="form-control" placeholder="Category ID" required>
+                        </div>
                         <div>
                             <label for="Category">Category</label>
                             <select id="Name" name="Name" value="{{ $Name }}" class="form-select" aria-label="" required>
@@ -205,9 +211,9 @@
                     </div>
                     <div class="col-md-8">
                         <div class="col-md-12 mb-3">
-                            <label for="Containt">Containt</label>
-                            <textarea class="ckeditor form-control" id="editor" value="{{ $Containt }}" name="Containt" required>{!! $Containt !!}</textarea>
-                            @error('Containt')
+                            <label for="Content">Containt</label>
+                            <textarea class="Content form-control" id="editor" value="{{ $Content }}" name="Content" required>{!! $Content !!}</textarea>
+                            @error('Content')
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                             @enderror
                         </div>
@@ -218,9 +224,27 @@
     <div id="pageloader">
         <img id="loading-image" src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/200w.gif?cid=6c09b952qoqcwjgziaq01rjsgrdfnlvd7kan6eqk8fwcbisd&rid=200w.gif&ct=g" alt="Loading..." />
     </div>
+
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'), {
+            ckfinder: {
+                uploadUrl: '{{ route("ckeditor.upload") }}?_token={{ csrf_token() }}'
+            }
+
+        })
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script> -->
 <!-- <script type="text/javascript">
     $("document").ready(function() {
         $('select[name="Subcategory"]').on('change', function() {
@@ -260,22 +284,6 @@
     app.controller('mainCtrl', function($scope) {
         $scope.phoneNumbr = /^([2-9])(?!\1+$)\d{9}$/;
     });
-</script>
-<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'), {
-            ckfinder: {
-                uploadUrl: '{{ route("ckeditor.upload") }}?_token={{ csrf_token() }}'
-            }
-
-        })
-        .then(editor => {
-            console.log(editor);
-        })
-        .catch(error => {
-            console.error(error);
-        });
 </script>
 
 </html>

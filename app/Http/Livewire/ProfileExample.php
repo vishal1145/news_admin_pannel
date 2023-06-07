@@ -26,9 +26,10 @@ class ProfileExample extends Component
     public $Date;
     public $Name;
     public $SubCatName;
-    public $Containt;
+    public $Content;
     public $photos;
     public $news;
+    public $category_id;
 
     public $tid;
     protected $queryString = ['tid'];
@@ -41,14 +42,14 @@ class ProfileExample extends Component
 
         $this->isEdit = $this->editId != -1;
 
-
+        $this->category_id = "";
         $this->Title = "";
         $this->domain_name = "";
         $this->Slug = "";
         $this->Date = "";
         $this->Name = "";
         $this->SubCatName = "";
-        $this->Containt ="";
+        $this->Content ="";
         $this->photos = "";
         $this->news = "";
 
@@ -56,13 +57,14 @@ class ProfileExample extends Component
         if($this->isEdit) {
             $news = News::findOrFail($this->editId);
             
+            $this->category_id = $news->category_id;
             $this->Title = $news->Title;
             $this->domain_name = $news->domain_name;
             $this->Slug = $news->Slug;
             $this->Date = $news->Date;
             $this->Name = $news->Name;
             $this->SubCatName = $news->SubCatName;
-            $this->Containt = $news->Containt;
+            $this->Content = $news->Containt;
             $this->photos = $news->photos;
         }   
 

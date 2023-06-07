@@ -2,48 +2,79 @@
 
 namespace App\Http\Livewire\Components;
 
-use App\Models\Teacher;
+use App\Models\Meta;
 use Livewire\Component;
 use Illuminate\Http\Request;
 
 
 class Modals extends Component
 {
-    public $livewire;
+    public $editId;
+    public $test;
+    public $isEdit;
+    public $domain_id;
+    public $facebook;
+    public $favicon;
+    public $desc;
+    public $twitter;
+    public $image;
+    public $author;
+    public $instagram;
+    public $title;
+    public $keyword;
+    public $pinterest;
+    public $tid;
+    public $catid;
+  
+
+    protected $queryString1 = ['catid'];
+    protected $queryString = ['tid'];
+
+    public function mount(Meta $image, Request $request)
+    {
+
+
+        $this->editId = $this->tid;
+
+        $this->isEdit = $this->editId != -1;
+
+        $this->domain_id = "";
+        $this->facebook = "";
+        $this->favicon = "";
+        $this->desc = "";
+        $this->twitter = "";
+        $this->image = "";
+        $this->author = "";
+        $this->instagram = "";
+        $this->title = "";
+        $this->keyword = "";
+        $this->pinterest = "";
+
+        if ($this->isEdit) {
+            $image = Meta::findOrFail($this->editId);
+
+            $this->domain_id = $image->domain_id;
+            $this->facebook = $image->facebook;
+            $this->favicon = $image->favicon;
+            $this->desc = $image->desc;
+            $this->twitter = $image->twitter;
+            $this->image = $image->image;
+            $this->author = $image->author;
+            $this->instagram = $image->instagram;
+            $this->title = $image->title;
+            $this->keyword = $image->keyword;
+            $this->pinterest = $image->pinterest;
+
+        }
+
+       
+    }
+
     public function render()
     {
         // $this->livewire = Teacher::select()->get();
         return view('components.modals');
     }
 
-    public function edit($id)
-    {
-        $livewire = Teacher::findOrFail($id);
-        return view('component.forms',compact('livewire'));
-    }
-
-    /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @param  \App\company  $company
-    * @return \Illuminate\Http\Response
-    */
-    public function update(Request $request, Teacher $livewire,)
-    {
-        $request->validate([
-            // 'Pin_No' => 'required',
-            // 'Unique_No' => 'required',
-            // 'Hall_Ticket_No' => 'required',
-            // 'rank' => 'required',
-            // 'student_name' => 'required',
-            // 'gender' => 'required',
-            // 'caste' => 'required',
-        ]);
-        
-        $livewire->fill($request->post())->save();
-
-        return redirect()->route('forms')->with('success','Teacher Has Been updated successfully');
-    }
-
+   
 }

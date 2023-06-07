@@ -73,6 +73,7 @@ class NewsController extends Controller
 
         if ($isEdit) {
             $news = News::findOrFail($tid);
+            $news->category_id = $request->input('category_id');
             $news->domain_name = $request->input('domain_name');
             $news->Slug = $request->input('Slug');
             $news->Title = $request->input('Title');
@@ -89,10 +90,11 @@ class NewsController extends Controller
             $news->Date = $request->input('Date');
             $news->Name = $request->input('Name');
             $news->SubCatName = $request->input('SubCatName');
-            $news->Containt = $request->input('Containt');
+            $news->Content = $request->input('Content');
             $news->save();
         } else {
             $image = new News;
+            $image->category_id = $request->input('category_id');
             $image->domain_name = $request->input('domain_name');
             $image->Slug = $request->input('Slug');
             $image->Title = $request->input('Title');
@@ -109,7 +111,7 @@ class NewsController extends Controller
             $image->Date = $request->input('Date');
             $image->Name = $request->input('Name');
             $image->SubCatName = $request->input('SubCatName');
-            $image->Containt = $request->input('Containt');
+            $image->Content = $request->input('Content');
             $image->save();
         }
 

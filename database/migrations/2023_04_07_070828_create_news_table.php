@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('category_id');
             $table->string('Title');
             $table->string('photos');
             $table->string('domain_name');
@@ -22,7 +23,7 @@ return new class extends Migration
             $table->timestamp('Date');
             $table->string('Name');
             $table->string('SubCatName');
-            $table->longText('Containt');
+            $table->longText('Content');
             $table->timestamps();
         });
     }

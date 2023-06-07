@@ -1,0 +1,83 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Meta;
+
+class MetaController extends Controller
+{
+    public function store(Request $request)
+    {
+
+        $tid = $request->input('tid');
+
+        $isEdit = $tid != -1;
+
+
+        if ($isEdit) {
+            $student = Meta::findOrFail($tid);
+            $student->domain_id = $request->input('domain_id');
+            $student->facebook = $request->input('facebook');
+            if ($request->hasFile('favicon')) {
+                $faviconFile = $request->file('favicon');
+                $faviconExtension = $faviconFile->getClientOriginalExtension();
+                $faviconFilename = time() . '.' . $faviconExtension;
+                $faviconFile->move('storage/', $faviconFilename);
+                $student->favicon = $faviconFilename;
+            }
+            $student->desc = $request->input('desc');
+            $student->twitter = $request->input('twitter');
+            if ($request->hasFile('image')) {
+                $imageFile = $request->file('image');
+                $imageExtension = $imageFile->getClientOriginalExtension();
+                $imageFilename = time() . '.' . $imageExtension;
+                $imageFile->move('storage/', $imageFilename);
+                $student->image = $imageFilename;
+            }
+            $student->author = $request->input('author');
+            $student->instagram = $request->input('instagram');
+            $student->title = $request->input('title');
+            $student->keyword = $request->input('keyword');
+            $student->pinterest = $request->input('pinterest');
+            $student->save();
+        } else {
+            $image = new Meta;
+            $image->domain_id = $request->input('domain_id');
+            $image->facebook = $request->input('facebook');
+            if ($request->hasFile('favicon')) {
+                $faviconFile = $request->file('favicon');
+                $faviconExtension = $faviconFile->getClientOriginalExtension();
+                $faviconFilename = 'favicon-'.time() . '.' . $faviconExtension;
+                $faviconFile->move('storage/', $faviconFilename);
+                $image->favicon = $faviconFilename;
+            }
+            $image->desc = $request->input('desc');
+            $image->twitter = $request->input('twitter');
+            if ($request->hasFile('image')) {
+                $imageFile = $request->file('image');
+                $imageExtension = $imageFile->getClientOriginalExtension();
+                $imageFilename = 'image-'.time() . '.' . $imageExtension;
+                $imageFile->move('storage/', $imageFilename);
+                $image->image = $imageFilename;
+            }
+            $image->author = $request->input('author');
+            $image->instagram = $request->input('instagram');
+            $image->title = $request->input('title');
+            $image->keyword = $request->input('keyword');
+            $image->pinterest = $request->input('pinterest');
+            $image->save();
+        }
+
+        //return redirect()->route('forms')->with('success','Teacher has been added successfully.');
+        $text = $isEdit ? 'edited' : 'added';
+        return redirect()->route('typography')->with('success', 'DomainMeta has been ' . $text . ' successfully');
+    }
+
+    public function destroy(Meta $live)
+    {
+        $live->delete();
+        return redirect()->route('typography')->with('success', 'DomainMeta has been deleted successfully');
+    }
+}

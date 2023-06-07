@@ -140,12 +140,12 @@
                                     @if($tid == -1)
 
                                     <label for="last_name">Image:</label>
-                                    <input type="file" name="Image" class="form-control" placeholder="Image_url" >
+                                    <input type="file" name="Image" class="form-control" placeholder="Image_url">
 
                                     @else
 
                                     <label for="last_name">Image:</label>
-                                    <input type="file" name="Image" class="form-control" placeholder="Image_url" >
+                                    <input type="file" name="Image" class="form-control" placeholder="Image_url">
                                     <img class="card-img-top" src="{{ url('storage/'.$Image) }}" alt="Card image cap" style="width: 104px; height: 104px; margin-top: 12px;">
 
                                     @endif
@@ -185,6 +185,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary ml-3">Submit</button>
+                    </form>
                 </div>
             </div>
             <div id="pageloader">

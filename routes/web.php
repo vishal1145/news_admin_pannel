@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\ResetPasswordExample;
 use App\Http\Livewire\UpgradeToPro;
 use App\Http\Livewire\Users;
+use App\Http\Controllers\MetaController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
@@ -66,6 +67,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/users', Users::class)->name('users');
     Route::post('/category', [CategoryController::class,'store'])->name('category.store');
     Route::post('/subcategory', [SubcategoryController::class,'store'])->name('subcategory.store');
+    Route::post('/meta', [MetaController::class,'store'])->name('meta.store');
+    Route::delete('/typography/{live}', [MetaController::class,'destroy'])->name('live.destroy');
+
     // Route::get('/users/show', Users::class)->name('users');
     // Route::get('/users/destroy', Users::class)->name('users');
     // Route::get('/edit', Edit::class)->name('edit');
