@@ -244,8 +244,8 @@
         .catch(error => {
             console.error(error);
         });
-</script> -->
-<!-- <script type="text/javascript">
+</script>  -->
+<script type="text/javascript">
     $("document").ready(function() {
         $('select[name="Subcategory"]').on('change', function() {
             var catId = $(this).val();
@@ -269,7 +269,7 @@
 
 
     });
-</script> -->
+</script>
 <script>
     $(document).ready(function() {
         $("#myform").on("submit", function() {

@@ -18,7 +18,7 @@ class MetaController extends Controller
 
         if ($isEdit) {
             $student = Meta::findOrFail($tid);
-            $student->domain_id = $request->input('domain_id');
+            $student->domain_name = $request->input('domain_name');
             $student->facebook = $request->input('facebook');
             if ($request->hasFile('favicon')) {
                 $faviconFile = $request->file('favicon');
@@ -41,10 +41,20 @@ class MetaController extends Controller
             $student->title = $request->input('title');
             $student->keyword = $request->input('keyword');
             $student->pinterest = $request->input('pinterest');
+            $student->youtube = $request->input('youtube');
+            $student->punchline = $request->input('punchline');
+            $student->punchdesc = $request->input('punchdesc');
+            if ($request->hasFile('punchlogo')) {
+                $imageFile = $request->file('punchlogo');
+                $imageExtension = $imageFile->getClientOriginalExtension();
+                $imageFilename = time() . '.' . $imageExtension;
+                $imageFile->move('storage/', $imageFilename);
+                $student->punchlogo = $imageFilename;
+            }
             $student->save();
         } else {
             $image = new Meta;
-            $image->domain_id = $request->input('domain_id');
+            $image->domain_name = $request->input('domain_name');
             $image->facebook = $request->input('facebook');
             if ($request->hasFile('favicon')) {
                 $faviconFile = $request->file('favicon');
@@ -67,6 +77,16 @@ class MetaController extends Controller
             $image->title = $request->input('title');
             $image->keyword = $request->input('keyword');
             $image->pinterest = $request->input('pinterest');
+            $image->youtube = $request->input('youtube');
+            $image->punchline = $request->input('punchline');
+            $image->punchdesc = $request->input('punchdesc');
+            if ($request->hasFile('punchlogo')) {
+                $imageFile = $request->file('punchlogo');
+                $imageExtension = $imageFile->getClientOriginalExtension();
+                $imageFilename = 'punchlogo-'.time() . '.' . $imageExtension;
+                $imageFile->move('storage/', $imageFilename);
+                $image->punchlogo = $imageFilename;
+            }
             $image->save();
         }
 
@@ -80,4 +100,6 @@ class MetaController extends Controller
         $live->delete();
         return redirect()->route('typography')->with('success', 'DomainMeta has been deleted successfully');
     }
+
+    
 }

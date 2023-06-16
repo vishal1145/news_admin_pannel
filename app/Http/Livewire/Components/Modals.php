@@ -12,7 +12,7 @@ class Modals extends Component
     public $editId;
     public $test;
     public $isEdit;
-    public $domain_id;
+    public $domain_name;
     public $facebook;
     public $favicon;
     public $desc;
@@ -23,8 +23,13 @@ class Modals extends Component
     public $title;
     public $keyword;
     public $pinterest;
+    public $youtube;
+    public $punchline;
+    public $punchdesc;
+    public $punchlogo;
     public $tid;
     public $catid;
+
   
 
     protected $queryString1 = ['catid'];
@@ -38,7 +43,7 @@ class Modals extends Component
 
         $this->isEdit = $this->editId != -1;
 
-        $this->domain_id = "";
+        $this->domain_name = "";
         $this->facebook = "";
         $this->favicon = "";
         $this->desc = "";
@@ -49,11 +54,15 @@ class Modals extends Component
         $this->title = "";
         $this->keyword = "";
         $this->pinterest = "";
+        $this->youtube = "";
+        $this->punchline = "";
+        $this->punchdesc = "";
+        $this->punchlogo = "";
 
         if ($this->isEdit) {
             $image = Meta::findOrFail($this->editId);
 
-            $this->domain_id = $image->domain_id;
+            $this->domain_name = $image->domain_name;
             $this->facebook = $image->facebook;
             $this->favicon = $image->favicon;
             $this->desc = $image->desc;
@@ -64,6 +73,11 @@ class Modals extends Component
             $this->title = $image->title;
             $this->keyword = $image->keyword;
             $this->pinterest = $image->pinterest;
+            $this->youtube = $image->youtube;
+            $this->punchline = $image->punchline;
+            $this->punchdesc = $image->punchdesc;
+            $this->punchlogo = $image->punchlogo;
+
 
         }
 

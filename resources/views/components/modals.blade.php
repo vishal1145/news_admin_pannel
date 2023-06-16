@@ -98,14 +98,13 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4 mb-3">
-                            <label for="domain_id">Domain ID:</label>
-                            <input type="text" name="domain_id" value="{{ $domain_id }}" class="form-control" placeholder="Domain ID" required>
+                            <label for="domain_name">Domain Name:</label>
+                            <input type="text" name="domain_name" value="{{ $domain_name }}" class="form-control" placeholder="Domain Name" required>
                         </div>
 
                         <div class="col-md-4 mb-3">
                             <label for="facebook">facebook:</label>
-                            <input type="text" name="facebook" value="{{ $facebook }}" class="form-control" placeholder="Facebook" required>
-                        </div>
+                            <input type="text" name="facebook" value="{{ $facebook }}" class="form-control" placeholder="Facebook">                        </div>
 
                         <div class="col-md-4 mb-3">
                             @if($tid==-1)
@@ -130,7 +129,7 @@
 
                         <div class="col-md-4 mb-3">
                             <label for="twitter">Twitter:</label>
-                            <input type="text" name="twitter" value="{{ $twitter }}" class="form-control" placeholder="Twitter" required>
+                            <input type="text" name="twitter" value="{{ $twitter }}" class="form-control" placeholder="Twitter">
                         </div>
 
                         <div class="col-md-4 mb-3">
@@ -156,13 +155,20 @@
 
                         <div class="col-md-4 mb-3">
                             <label for="instagram">Instagram:</label>
-                            <input type="text" name="instagram" value="{{ $instagram }}" class="form-control" placeholder="Instagram" required>
+                            <input type="text" name="instagram" value="{{ $instagram }}" class="form-control" placeholder="Instagram">
                         </div>
 
                         <div class="col-md-4 mb-3">
-                            <label for="title">Title:</label>
-                            <input type="text" name="title" value="{{ $title }}" class="form-control" placeholder="Title" required>
+                            @if($tid==-1)
+                            <label for="punchlogo">Punch Logo:</label>
+                            <input type="file" name="punchlogo" value="{{ $punchlogo }}" class="form-control" placeholder="Punch Logo" >
+                            @else
+                            <label for="punchlogo">Punch Logo:</label>
+                            <input type="file" name="punchlogo" value="{{ $punchlogo }}" class="form-control" placeholder="Punch Logo" >
+                            <img class="card-img-top" src="{{ url('storage/'.$punchlogo) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%">
+                            @endif
                         </div>
+
                     </div>
                     <div class="row">
                         <div class="col-md-4 mb-3">
@@ -172,7 +178,29 @@
 
                         <div class="col-md-4 mb-3">
                             <label for="pinterest">Pinterest:</label>
-                            <input type="text" name="pinterest" value="{{ $pinterest }}" class="form-control" placeholder="Pinterest" required>
+                            <input type="text" name="pinterest" value="{{ $pinterest }}" class="form-control" placeholder="Pinterest">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="title">Title:</label>
+                            <input type="text" name="title" value="{{ $title }}" class="form-control" placeholder="Title" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="youtube">YouTube:</label>
+                            <input type="text" name="youtube" value="{{ $youtube }}" class="form-control" placeholder="YouTube">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="punchline">Punch Line:</label>
+                            <input type="text" name="punchline" value="{{ $punchline }}" class="form-control" placeholder="Punch Line" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="punchdesc">Punch Desc..:</label>
+                            <input type="text" name="punchdesc" value="{{ $punchdesc }}" class="form-control" placeholder="Punch Desc.." required>
                         </div>
                     </div>
 

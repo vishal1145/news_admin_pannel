@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('metas', function (Blueprint $table) {
             $table->id();
-            $table->string('domain_id');
+            $table->string('domain_name');
             $table->string('facebook');
             $table->string('favicon');
             $table->string('desc');
@@ -23,9 +23,13 @@ return new class extends Migration
             $table->string('image');
             $table->string('author');
             $table->string('instagram');
-            $table->string('Title');
+            $table->string('title');
             $table->string('keyword');
             $table->string('pinterest');
+            $table->string('youtube');
+            $table->string('punchline');
+            $table->string('punchdesc');
+            $table->string('punchlogo');
             $table->timestamps();
         });
     }

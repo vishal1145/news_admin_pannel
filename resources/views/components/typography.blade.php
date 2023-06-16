@@ -44,23 +44,15 @@
             <h2 class="h4">Domain Meta</h2>
         </div>
         <div class="btn-toolbar mb-2 mb-md-0" style="justify-content: end;">
-            <a href="{{ route('modals', [ 'tid' => '-1' ]) }}" class="btn btn-pill btn-outline-primary">
+            <!-- <a href="{{ route('modals', [ 'tid' => '-1' ]) }}" class="btn btn-pill btn-outline-primary">
                 <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                     </path>
                 </svg>
                 Add Domain Meta
-            </a>
+            </a> -->
             <!-- <div> -->
-            <!-- <form action="{{ route('typography') }}" method="GET"> Add a form element -->
-            <!-- <select name="domain_id" onchange="this.form.submit()"> Use onchange event to submit the form when the selection changes -->
-            <!-- <option value="">All Domains</option>
-                        @foreach ($domains as $domain)
-                        <option value="{{ $domain->id }}" @if ($selectedDomainId==$domain->id) selected @endif>{{ $domain->domain_name }}</option>
-                        @endforeach
-                    </select> -->
-            <!-- </form> -->
-            <!-- </div> -->
+           
         </div>
     </div>
 
@@ -73,38 +65,48 @@
                     <table class="table fixed-column-table">
                         <thead>
                             <tr>
-                                <th class="fixed-column">Domain ID</th>
+                                <th class="fixed-column">Domain Name</th>
                                 <th>Favicon</th>
                                 <th>Image</th>
-                                <th>Files</th>
+                                <th>Punch Logo</th>
+                                <th>Title</th>
                                 <th>Facebook</th>
                                 <th>Twitter</th>
                                 <th>Instagram</th>
                                 <th>Keyword</th>
+                                <th>Pinterest</th>
+                                <th>YouTube</th>
                                 <th>Description</th>
                                 <th>Author</th>
+                                <th>Punch Line</th>
+                                <th>Punch Desc</th>    
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($lives as $live)
                             <tr>
-                                <td>{{ $live->domain_id }}</td>
+                                <td><a href= "{{ $live->domain_name }}" target="_blank">{{ $live->domain_name }}</a></td>
                                 <td><img class="card-img-top" src="{{ url('storage/'.$live->favicon) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
                                 <td><img class="card-img-top" src="{{ url('storage/'.$live->image) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
+                                <td><img class="card-img-top" src="{{ url('storage/'.$live->punchlogo) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
                                 <td>{{ $live->title }}</td>
                                 <td>{{ $live->facebook }}</td>
                                 <td>{{ $live->twitter }}</td>
                                 <td>{{ $live->instagram }}</td>
                                 <td>{{ $live->keyword }}</td>
+                                <td>{{ $live->pinterest }}</td>
+                                <td>{{ $live->youtube }}</td>
                                 <td>{{ $live->desc }}</td>
                                 <td>{{ $live->author }}</td>
+                                <td>{{ $live->punchline }}</td>
+                                <td>{{ $live->punchdesc }}</td>
                                 <td>
                                     <form action="{{ route('live.destroy', $live->id) }}" method="POST">
                                         <a class="btn btn-primary" href="{{ route('modals', ['tid' => $live->id]) }}"><i class="fa fa-edit"></i></a>
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn show_confirm btn-danger"><i class="fa fa-trash"></i></button>
+                                        <!-- <button type="submit" class="btn show_confirm btn-danger"><i class="fa fa-trash"></i></button> -->
                                     </form>
 
                                 </td>

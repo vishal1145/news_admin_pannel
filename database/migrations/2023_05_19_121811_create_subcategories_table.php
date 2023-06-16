@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('subcategories', function (Blueprint $table) {
             $table->id();
-            $table->strring('domain_name');
+            $table->string('domain_name');
             $table->integer('category_id');
             $table->string('SubCatName');
             $table->string('Image');
