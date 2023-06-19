@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('metas', function (Blueprint $table) {
             $table->id();
-            $table->string('domain_name');
+            $table->string('domain_id');
             $table->string('facebook');
             $table->string('favicon');
             $table->string('desc');

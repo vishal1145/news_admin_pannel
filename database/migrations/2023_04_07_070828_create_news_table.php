@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('domain_id');
             $table->bigInteger('category_id');
             $table->string('Title');
             $table->string('photos');

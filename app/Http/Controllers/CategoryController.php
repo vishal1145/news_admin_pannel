@@ -26,7 +26,7 @@ class CategoryController extends Controller
 
         if ($isEdit) {
             $student = Category::findOrFail($tid);
-            $student->domain_name = $request->input('domain_name');
+            $student->domain_id = $request->input('domain_id');
             $student->Name = $request->input('Name');
 
             if ($request->hasfile('Image')) {
@@ -40,10 +40,12 @@ class CategoryController extends Controller
             $student->Desc = $request->input('Desc');
             $student->Display_in_home = $request->has('Display_in_home');
             $student->Display_in_header = $request->has('Display_in_header');
+            $student->Display_in_top_nav = $request->has('Display_in_top_nav');
+            $student->Display_in_layout = $request->input('Display_in_layout');
             $student->save();
         } else {
             $image = new Category;
-            $image->domain_name = $request->input('domain_name');
+            $image->domain_id = $request->input('domain_id');
             $image->Name = $request->input('Name');
             if ($request->hasfile('Image')) {
                 $file = $request->file('Image');
@@ -56,6 +58,8 @@ class CategoryController extends Controller
             $image->Desc = $request->input('Desc');
             $image->Display_in_home = $request->has('Display_in_home');
             $image->Display_in_header = $request->has('Display_in_header');
+            $image->Display_in_top_nav = $request->has('Display_in_top_nav');
+            $image->Display_in_layout = $request->input('Display_in_layout');
 
             // $image->Sub_Title = $request->input('Sub_Title');
             $image->save();

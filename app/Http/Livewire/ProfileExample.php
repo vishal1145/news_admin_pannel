@@ -21,6 +21,7 @@ class ProfileExample extends Component
     public $test;
     public $isEdit;
     public $Title;
+    public $domain_id;
     public $domain_name;
     public $Slug;
     public $Date;
@@ -44,6 +45,7 @@ class ProfileExample extends Component
 
         $this->category_id = "";
         $this->Title = "";
+        $this->domain_id = "";
         $this->domain_name = "";
         $this->Slug = "";
         $this->Date = "";
@@ -57,6 +59,7 @@ class ProfileExample extends Component
         if($this->isEdit) {
             $news = News::findOrFail($this->editId);
             
+            $this->domain_id = $news->domain_id;
             $this->category_id = $news->category_id;
             $this->Title = $news->Title;
             $this->domain_name = $news->domain_name;

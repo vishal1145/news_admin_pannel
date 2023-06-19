@@ -109,22 +109,10 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="Domain">Domain:</label>
-                                <select class="form-select condition" aria-label="" value="{{ $domain_name }}" name="domain_name" id="domain_name" checked>
-                                    <option value="option_select" disabled selected>Domain</option>
-                                    @foreach(App\Models\Domain::all() as $key=> $Domain)
-                                    @if($domain_name == $Domain->domain_name)
-                                    <option @selected( $Domain->domain_name == $Domain->domain_name) value="{{ $Domain->domain_name }}">
-                                        {{ $Domain->domain_name }}
-                                    </option>
-                                    @else
-                                    <option>
-                                        {{ $Domain->domain_name }}
-                                    </option>
-                                    @endif
-                                    @endforeach
-                                </select>
+                                <label for="domain_id">Domain ID:</label>
+                                <input type="text" name="domain_id" value="{{ $domain_id }}" class="form-control" placeholder="Domain ID" required>
                             </div>
+
                         </div>
 
                         <div class="row">
@@ -169,6 +157,7 @@
                                     @endif
                                 </div>
                             </div>
+
                             @if($Display_in_home == 1)
                             <label><input type="checkbox" name="Display_in_home" value="{{ $Display_in_home }}" checked> Display in Home</label>
                             @else
@@ -182,6 +171,29 @@
                             <label><input type="checkbox" name="Display_in_header" value="{{ $Display_in_header }}"> Display in Header</label>
                             @endif
 
+                            @if($Display_in_top_nav == 1)
+                            <label><input type="checkbox" name="Display_in_top_nav" value="{{ $Display_in_top_nav }}" checked> Display in Top Nav-Header</label>
+                            @else
+                            <label><input type="checkbox" name="Display_in_top_nav" value="{{ $Display_in_top_nav }}"> Display in Top Nav-Header</label>
+                            @endif
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="layout">Layout:</label>
+                            <select class="form-select condition" aria-label="" name="Display_in_layout" id="Display_in_layout">
+                                <option value="option_select" disabled selected>Layout</option>
+                                @foreach(App\Models\Layout::all() as $Layout)
+                                @if($Display_in_layout == $Layout->id)
+                                <option value="{{ $Layout->id }}" selected>
+                                    {{ $Layout->Display_in_layout }}
+                                </option>
+                                @else
+                                <option value="{{ $Layout->id }}">
+                                    {{ $Layout->Display_in_layout }}
+                                </option>
+                                @endif
+                                @endforeach
+                            </select>
                         </div>
 
                         <button type="submit" class="btn btn-primary ml-3">Submit</button>

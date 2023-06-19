@@ -53,6 +53,7 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Domain' => $baseDir . '/app/Models/Domain.php',
+    'App\\Models\\Layout' => $baseDir . '/app/Models/Layout.php',
     'App\\Models\\Meta' => $baseDir . '/app/Models/Meta.php',
     'App\\Models\\News' => $baseDir . '/app/Models/News.php',
     'App\\Models\\Subcategory' => $baseDir . '/app/Models/Subcategory.php',

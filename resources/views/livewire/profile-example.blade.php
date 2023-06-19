@@ -109,6 +109,10 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="my-3">
+                            <label for="domain_id">Domain ID:</label>
+                            <input type="text" name="domain_id" value="{{ $domain_id }}" class="form-control" placeholder="Domain ID" required>
+                        </div>
+                        <div class="my-3">
                             <label for="category_id">Category ID:</label>
                             <input type="text" name="category_id" value="{{ $category_id }}" class="form-control" placeholder="Category ID" required>
                         </div>

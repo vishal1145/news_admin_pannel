@@ -1,4 +1,4 @@
-<nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar>
+<nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse newSidebar" data-simplebar>
   <div class="sidebar-inner px-2 pt-3">
     <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
       <div class="d-flex align-items-center">
@@ -298,6 +298,44 @@
           </ul>
         </div>
       </li>
+      <li class="nav-item">
+        <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#submenu-pages3">
+          <span>
+            <span class="sidebar-icon"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="white"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <line x1="20" y1="8" x2="20" y2="14"></line>
+                <line x1="23" y1="11" x2="17" y2="11"></line>
+              </svg></span>
+            <span class="sidebar-text" style="margin-left: 12px;">Layout</span>
+          </span>
+          <span class="link-arrow"><svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+            </svg></span>
+        </span>
+        <div class="multi-level collapse" role="list" id="submenu-pages3" aria-expanded="false">
+          <ul class="flex-column nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('notifications', [ 'tid' => '-1' ]) }}">
+                <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+                  </path>
+                </svg>
+                <span class="sidebar-text">Add Layout</span>
+              </a>
+            </li>
+            <li class="nav-item {{ Request::segment(1) == 'forms' ? 'active' : '' }}">
+              <a class="nav-link" href="/lock">
+                <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="sidebar-text">Manage Layout</span>
+              </a>
+            </li>
+           
+          </ul>
+        </div>
+      </li>
       <ul>
       <!-- <li class="nav-item">
         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
@@ -397,3 +435,6 @@
   </ul>
   </div>
 </nav>
+<div class="col-3">
+  
+</div>

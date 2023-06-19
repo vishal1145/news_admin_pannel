@@ -18,7 +18,7 @@ class MetaController extends Controller
 
         if ($isEdit) {
             $student = Meta::findOrFail($tid);
-            $student->domain_name = $request->input('domain_name');
+            $student->domain_id = $request->input('domain_id');
             $student->facebook = $request->input('facebook');
             if ($request->hasFile('favicon')) {
                 $faviconFile = $request->file('favicon');
@@ -54,7 +54,7 @@ class MetaController extends Controller
             $student->save();
         } else {
             $image = new Meta;
-            $image->domain_name = $request->input('domain_name');
+            $image->domain_id = $request->input('domain_id');
             $image->facebook = $request->input('facebook');
             if ($request->hasFile('favicon')) {
                 $faviconFile = $request->file('favicon');

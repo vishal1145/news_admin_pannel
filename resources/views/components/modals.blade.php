@@ -98,8 +98,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4 mb-3">
-                            <label for="domain_name">Domain Name:</label>
-                            <input type="text" name="domain_name" value="{{ $domain_name }}" class="form-control" placeholder="Domain Name" required>
+                            <label for="domain_id">Domain ID:</label>
+                            <input type="text" name="domain_id" value="{{ $domain_id }}" class="form-control" placeholder="Domain ID" required>
                         </div>
 
                         <div class="col-md-4 mb-3">

@@ -18,10 +18,12 @@ class BootstrapTables extends Component
     public $Desc;
     public $Display_in_home;
     public $Display_in_header;
+    public $Display_in_top_nav;
+    public $Display_in_layout;
     public $Sub_Title;
     public $image;
     public $Slug;
-    public $domain_name;
+    public $domain_id;
     public $selectedID;
     public $tid;
     public $catid;
@@ -39,13 +41,15 @@ class BootstrapTables extends Component
 
         $this->isEdit = $this->editId != -1;
 
-        $this->domain_name = "";
+        $this->domain_id = "";
         $this->Name = "";
         $this->Image = "";
         $this->Slug = "";
         $this->Desc = "";
         $this->Display_in_home = "";
         $this->Display_in_header = "";
+        $this->Display_in_top_nav = "";
+        $this->Display_in_layout = "";
 
         // $isSubcategory = false;
         // if(isset($this->catid)){
@@ -59,13 +63,15 @@ class BootstrapTables extends Component
         if ($this->isEdit) {
             $image = Category::findOrFail($this->editId);
 
-            $this->domain_name = $image->domain_name;
+            $this->domain_id = $image->domain_id;
             $this->Name = $image->Name;
             $this->Image = $image->Image;
             $this->Slug = $image->Slug;
             $this->Desc = $image->Desc;
             $this->Display_in_home = $image->Display_in_home;
             $this->Display_in_header = $image->Display_in_header;
+            $this->Display_in_top_nav = $image->Display_in_top_nav;
+            $this->Display_in_layout = $image->Display_in_layout;
 
             // $this->categories =  Domain::pluck('id', 'domain_name');
             // $this->selectedID = 2;

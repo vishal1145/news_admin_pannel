@@ -12,7 +12,7 @@ class Modals extends Component
     public $editId;
     public $test;
     public $isEdit;
-    public $domain_name;
+    public $domain_id;
     public $facebook;
     public $favicon;
     public $desc;
@@ -43,7 +43,7 @@ class Modals extends Component
 
         $this->isEdit = $this->editId != -1;
 
-        $this->domain_name = "";
+        $this->domain_id = "";
         $this->facebook = "";
         $this->favicon = "";
         $this->desc = "";
@@ -62,7 +62,7 @@ class Modals extends Component
         if ($this->isEdit) {
             $image = Meta::findOrFail($this->editId);
 
-            $this->domain_name = $image->domain_name;
+            $this->domain_id = $image->domain_id;
             $this->facebook = $image->facebook;
             $this->favicon = $image->favicon;
             $this->desc = $image->desc;

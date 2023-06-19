@@ -65,7 +65,7 @@
                     <table class="table fixed-column-table">
                         <thead>
                             <tr>
-                                <th class="fixed-column">Domain Name</th>
+                                <th class="fixed-column">Domain ID</th>
                                 <th>Favicon</th>
                                 <th>Image</th>
                                 <th>Punch Logo</th>
@@ -86,7 +86,7 @@
                         <tbody>
                             @foreach ($lives as $live)
                             <tr>
-                                <td><a href= "{{ $live->domain_name }}" target="_blank">{{ $live->domain_name }}</a></td>
+                                <td><a href= "{{ $live->domain_id }}" target="_blank">{{ $live->domain_id }}</a></td>
                                 <td><img class="card-img-top" src="{{ url('storage/'.$live->favicon) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
                                 <td><img class="card-img-top" src="{{ url('storage/'.$live->image) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
                                 <td><img class="card-img-top" src="{{ url('storage/'.$live->punchlogo) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
