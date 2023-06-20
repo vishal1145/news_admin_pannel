@@ -29,6 +29,9 @@ class Modals extends Component
     public $punchlogo;
     public $design;
     public $company;
+    public $privacy;
+    public $terms;
+    public $facebook_id;
     public $tid;
     public $catid;
 
@@ -62,6 +65,9 @@ class Modals extends Component
         $this->punchlogo = "";
         $this->design = "";
         $this->company = "";
+        $this->privacy = "";
+        $this->terms = "";
+        $this->facebook_id = "";
 
         if ($this->isEdit) {
             $image = Meta::findOrFail($this->editId);
@@ -83,6 +89,9 @@ class Modals extends Component
             $this->punchlogo = $image->punchlogo;
             $this->design = $image->design;
             $this->company = $image->company;
+            $this->privacy = $image->privacy;
+            $this->terms = $image->terms;
+            $this->facebook_id = $image->facebook_id;
 
 
         }

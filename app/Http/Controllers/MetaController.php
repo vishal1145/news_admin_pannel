@@ -46,6 +46,9 @@ class MetaController extends Controller
             $student->punchdesc = $request->input('punchdesc');
             $student->design = $request->input('design');
             $student->company = $request->input('company');
+            $student->privacy = $request->input('privacy');
+            $student->terms = $request->input('terms');
+            $student->facebook_id = $request->input('facebook_id');
             if ($request->hasFile('punchlogo')) {
                 $imageFile = $request->file('punchlogo');
                 $imageExtension = $imageFile->getClientOriginalExtension();
@@ -84,6 +87,9 @@ class MetaController extends Controller
             $image->punchdesc = $request->input('punchdesc');
             $image->design = $request->input('design');
             $image->company = $request->input('company');
+            $image->privacy = $request->input('privacy');
+            $image->terms = $request->input('terms');
+            $image->facebook_id = $request->input('facebook_id');
 
             if ($request->hasFile('punchlogo')) {
                 $imageFile = $request->file('punchlogo');

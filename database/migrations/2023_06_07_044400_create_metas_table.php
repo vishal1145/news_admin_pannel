@@ -32,6 +32,9 @@ return new class extends Migration
             $table->string('punchlogo');
             $table->string('design');
             $table->string('company');
+            $table->string('privacy');
+            $table->string('terms');
+            $table->string('facebook_id');
             $table->timestamps();
         });
     }

@@ -104,7 +104,8 @@
 
                         <div class="col-md-4 mb-3">
                             <label for="facebook">facebook:</label>
-                            <input type="text" name="facebook" value="{{ $facebook }}" class="form-control" placeholder="Facebook">                        </div>
+                            <input type="text" name="facebook" value="{{ $facebook }}" class="form-control" placeholder="Facebook">
+                        </div>
 
                         <div class="col-md-4 mb-3">
                             @if($tid==-1)
@@ -161,10 +162,10 @@
                         <div class="col-md-4 mb-3">
                             @if($tid==-1)
                             <label for="punchlogo">Punch Logo:</label>
-                            <input type="file" name="punchlogo" value="{{ $punchlogo }}" class="form-control" placeholder="Punch Logo" >
+                            <input type="file" name="punchlogo" value="{{ $punchlogo }}" class="form-control" placeholder="Punch Logo">
                             @else
                             <label for="punchlogo">Punch Logo:</label>
-                            <input type="file" name="punchlogo" value="{{ $punchlogo }}" class="form-control" placeholder="Punch Logo" >
+                            <input type="file" name="punchlogo" value="{{ $punchlogo }}" class="form-control" placeholder="Punch Logo">
                             <img class="card-img-top" src="{{ url('storage/'.$punchlogo) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%">
                             @endif
                         </div>
@@ -179,6 +180,11 @@
                         <div class="col-md-4 mb-3">
                             <label for="pinterest">Pinterest:</label>
                             <input type="text" name="pinterest" value="{{ $pinterest }}" class="form-control" placeholder="Pinterest">
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="facebook_id">Facebook ID:</label>
+                            <input type="text" name="facebook_id" value="{{ $facebook_id }}" class="form-control" placeholder="Facebook ID">
                         </div>
                     </div>
                     <div class="row">
@@ -213,6 +219,28 @@
                         <div class="col-md-4 mb-3">
                             <label for="company">Company:</label>
                             <input type="text" name="company" value="{{ $company }}" class="form-control" placeholder="Company" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="col-md-12 mb-3">
+                                <label for="privacy">Privacy & Policy:</label>
+                                <textarea class="Content form-control" value="" name="privacy" required></textarea>
+                                @error('privacy')
+                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="col-md-12 mb-3">
+                                <label for="terms">Terms & Conditions:</label>
+                                <textarea class="Content form-control" value="" name="terms" required></textarea>
+                                @error('terms')
+                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
+                            </div>
                         </div>
                     </div>
 
