@@ -44,6 +44,8 @@ class MetaController extends Controller
             $student->youtube = $request->input('youtube');
             $student->punchline = $request->input('punchline');
             $student->punchdesc = $request->input('punchdesc');
+            $student->design = $request->input('design');
+            $student->company = $request->input('company');
             if ($request->hasFile('punchlogo')) {
                 $imageFile = $request->file('punchlogo');
                 $imageExtension = $imageFile->getClientOriginalExtension();
@@ -80,6 +82,9 @@ class MetaController extends Controller
             $image->youtube = $request->input('youtube');
             $image->punchline = $request->input('punchline');
             $image->punchdesc = $request->input('punchdesc');
+            $image->design = $request->input('design');
+            $image->company = $request->input('company');
+
             if ($request->hasFile('punchlogo')) {
                 $imageFile = $request->file('punchlogo');
                 $imageExtension = $imageFile->getClientOriginalExtension();

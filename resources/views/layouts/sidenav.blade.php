@@ -435,6 +435,3 @@
   </ul>
   </div>
 </nav>
-<div class="col-3">
-  
-</div>

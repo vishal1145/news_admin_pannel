@@ -199,8 +199,20 @@
                         </div>
 
                         <div class="col-md-4 mb-3">
-                            <label for="punchdesc">Punch Desc..:</label>
+                            <label for="punchdesc">Punch Desc:</label>
                             <input type="text" name="punchdesc" value="{{ $punchdesc }}" class="form-control" placeholder="Punch Desc.." required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="design">Design:</label>
+                            <input type="text" name="design" value="{{ $design }}" class="form-control" placeholder="Design" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="company">Company:</label>
+                            <input type="text" name="company" value="{{ $company }}" class="form-control" placeholder="Company" required>
                         </div>
                     </div>
 

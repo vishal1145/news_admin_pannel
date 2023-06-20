@@ -26,13 +26,13 @@
 
 <body>
     <!-- <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center"> -->
-    <div class="row">
-        <div class="col-3">
+    <div class="" style="width:100%">
+        <div class="" style="width:30%" >
             @include('./layouts/sidenav')
         </div>
 
-        <div class="col-9 mb-4" style="margin-left: 275px; margin-top: 90px;">
-        <div class="row">
+        <div class="" style="margin-left: 275px; margin-top: 90px;width:78%">
+        <div class="">
             <div class="d-block mb-4 mb-md-0">
                 <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
                     <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent" style="margin-bottom: auto;">

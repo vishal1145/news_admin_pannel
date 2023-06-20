@@ -30,6 +30,8 @@ return new class extends Migration
             $table->string('punchline');
             $table->string('punchdesc');
             $table->string('punchlogo');
+            $table->string('design');
+            $table->string('company');
             $table->timestamps();
         });
     }
