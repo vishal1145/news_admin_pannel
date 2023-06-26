@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->boolean('publish_status');
             $table->bigInteger('domain_id');
             $table->bigInteger('category_id');
             $table->string('Title');
@@ -24,6 +25,8 @@ return new class extends Migration
             $table->timestamp('Date');
             $table->string('Name');
             $table->string('SubCatName');
+            $table->string('youtube');
+            $table->boolean('Display_in_front');
             $table->longText('Content');
             $table->timestamps();
         });

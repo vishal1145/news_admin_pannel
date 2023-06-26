@@ -21,12 +21,15 @@ class ProfileExample extends Component
     public $test;
     public $isEdit;
     public $Title;
+    public $publish_status;
     public $domain_id;
     public $domain_name;
     public $Slug;
     public $Date;
     public $Name;
     public $SubCatName;
+    public $youtube;
+    public $Display_in_front;
     public $Content;
     public $photos;
     public $news;
@@ -45,12 +48,15 @@ class ProfileExample extends Component
 
         $this->category_id = "";
         $this->Title = "";
+        $this->publish_status = "";
         $this->domain_id = "";
         $this->domain_name = "";
         $this->Slug = "";
         $this->Date = "";
         $this->Name = "";
         $this->SubCatName = "";
+        $this->youtube = "";
+        $this->Display_in_front = "";
         $this->Content ="";
         $this->photos = "";
         $this->news = "";
@@ -59,6 +65,7 @@ class ProfileExample extends Component
         if($this->isEdit) {
             $news = News::findOrFail($this->editId);
             
+            $this->publish_status = $news->publish_status;
             $this->domain_id = $news->domain_id;
             $this->category_id = $news->category_id;
             $this->Title = $news->Title;
@@ -67,6 +74,8 @@ class ProfileExample extends Component
             $this->Date = $news->Date;
             $this->Name = $news->Name;
             $this->SubCatName = $news->SubCatName;
+            $this->youtube = $news->youtube;
+            $this->Display_in_front = $news->Display_in_front;
             $this->Content = $news->Containt;
             $this->photos = $news->photos;
         }   

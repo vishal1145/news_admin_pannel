@@ -108,6 +108,18 @@
                 <input type="hidden" name="tid" value="{{ $editId }}">
                 <div class="row">
                     <div class="col-md-4">
+                        <div>
+                            <label for="publish_status">Publish Status</label>
+                            <select id="publish_status" name="publish_status" value="{{ $publish_status }}" class="form-select" aria-label="" required>
+                                <option value="Select" disabled {{ $publish_status === null ? 'selected' : '' }}>Select</option>
+                                <option value="1" {{ $publish_status == 1 ? 'selected' : '' }}>True</option>
+                                <option value="0" {{ $publish_status == 0 ? 'selected' : '' }}>False</option>
+                            </select>
+
+                            @error('publish_status')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $publish_status }}</div>
+                            @enderror
+                        </div>
                         <div class="my-3">
                             <label for="domain_id">Domain ID:</label>
                             <input type="text" name="domain_id" value="{{ $domain_id }}" class="form-control" placeholder="Domain ID" required>
@@ -211,12 +223,24 @@
 
                             @endif
                         </div>
+                        <div class="my-3">
+                            <label for="youtube">YouTube:</label>
+                            <input type="text" name="youtube" value="{{ $youtube }}" class="form-control" placeholder="YouTube" required>
+                        </div>
+                        <div>
+                            @if($Display_in_front == 1)
+                            <label><input type="checkbox" name="Display_in_front" value="{{ $Display_in_front }}" checked> Display in Front</label>
+                            @else
+                            <label><input type="checkbox" name="Display_in_front" value="{{ $Display_in_front }}"> Display in Front</label>
+                            @endif
+                        </div>
+
                         <button type="submit" class="btn btn-primary ml-3">Submit</button>
                     </div>
                     <div class="col-md-8">
                         <div class="col-md-12 mb-3">
                             <label for="Content">Containt</label>
-                            <textarea class="Content form-control" id="editor" value="{{ $Content }}" name="Content" required>{!! $Content !!}</textarea>
+                            <textarea class="Content form-control" id="editor" value="{{ $Content }}" name="Content" style="height: 550px;" required>{!! $Content !!}</textarea>
                             @error('Content')
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                             @enderror
