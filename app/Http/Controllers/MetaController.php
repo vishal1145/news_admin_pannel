@@ -42,6 +42,7 @@ class MetaController extends Controller
             $student->keyword = $request->input('keyword');
             $student->pinterest = $request->input('pinterest');
             $student->youtube = $request->input('youtube');
+            $student->analytics_id = $request->input('analytics_id');
             $student->punchline = $request->input('punchline');
             $student->punchdesc = $request->input('punchdesc');
             $student->design = $request->input('design');
@@ -83,6 +84,7 @@ class MetaController extends Controller
             $image->keyword = $request->input('keyword');
             $image->pinterest = $request->input('pinterest');
             $image->youtube = $request->input('youtube');
+            $image->analytics_id = $request->input('analytics_id');
             $image->punchline = $request->input('punchline');
             $image->punchdesc = $request->input('punchdesc');
             $image->design = $request->input('design');

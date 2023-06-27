@@ -197,6 +197,11 @@
                             <label for="youtube">YouTube:</label>
                             <input type="text" name="youtube" value="{{ $youtube }}" class="form-control" placeholder="YouTube">
                         </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="facebook_id">Analytics ID:</label>
+                            <input type="text" name="analytics_id" value="{{ $analytics_id }}" class="form-control" placeholder="Analytics ID">
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 mb-3">
@@ -225,7 +230,7 @@
                         <div class="col-md-8">
                             <div class="col-md-12 mb-3">
                                 <label for="privacy">Privacy & Policy:</label>
-                                <textarea class="Content form-control" value="" name="privacy" required></textarea>
+                                <textarea class="Content form-control" value="" name="privacy"></textarea>
                                 @error('privacy')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror
@@ -236,7 +241,7 @@
                         <div class="col-md-8">
                             <div class="col-md-12 mb-3">
                                 <label for="terms">Terms & Conditions:</label>
-                                <textarea class="Content form-control" value="" name="terms" required></textarea>
+                                <textarea class="Content form-control" value="" name="terms"></textarea>
                                 @error('terms')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror

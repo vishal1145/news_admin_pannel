@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string('privacy');
             $table->string('terms');
             $table->string('facebook_id');
+            $table->string('analytics_id');
             $table->timestamps();
         });
     }

@@ -32,6 +32,7 @@ class Modals extends Component
     public $privacy;
     public $terms;
     public $facebook_id;
+    public $analytics_id;
     public $tid;
     public $catid;
 
@@ -68,6 +69,7 @@ class Modals extends Component
         $this->privacy = "";
         $this->terms = "";
         $this->facebook_id = "";
+        $this->analytics_id = "";
 
         if ($this->isEdit) {
             $image = Meta::findOrFail($this->editId);
@@ -92,6 +94,7 @@ class Modals extends Component
             $this->privacy = $image->privacy;
             $this->terms = $image->terms;
             $this->facebook_id = $image->facebook_id;
+            $this->analytics_id = $image->analytics_id;
 
 
         }
