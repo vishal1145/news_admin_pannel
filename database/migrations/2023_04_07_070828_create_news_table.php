@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('Name');
             $table->string('SubCatName');
             $table->string('youtube');
+            $table->json('tags')->nullable();
             $table->boolean('Display_in_front');
             $table->longText('Content');
             $table->timestamps();

@@ -227,6 +227,10 @@
                             <label for="youtube">YouTube:</label>
                             <input type="text" name="youtube" value="{{ $youtube }}" class="form-control" placeholder="YouTube" required>
                         </div>
+                        <div class="my-3">
+                            <label for="tags">Tags:</label>
+                            <input type="text" name="tags" value="{{ json_encode($tags) }}" class="form-control" placeholder="Tags" required>
+                        </div>
                         <div>
                             @if($Display_in_front == 1)
                             <label><input type="checkbox" name="Display_in_front" value="{{ $Display_in_front }}" checked> Display in Front</label>

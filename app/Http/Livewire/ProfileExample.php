@@ -29,6 +29,7 @@ class ProfileExample extends Component
     public $Name;
     public $SubCatName;
     public $youtube;
+    public $tags;
     public $Display_in_front;
     public $Content;
     public $photos;
@@ -56,6 +57,7 @@ class ProfileExample extends Component
         $this->Name = "";
         $this->SubCatName = "";
         $this->youtube = "";
+        $this->tags = "";
         $this->Display_in_front = "";
         $this->Content ="";
         $this->photos = "";
@@ -75,6 +77,7 @@ class ProfileExample extends Component
             $this->Name = $news->Name;
             $this->SubCatName = $news->SubCatName;
             $this->youtube = $news->youtube;
+            $this->tags = $news->tags;
             $this->Display_in_front = $news->Display_in_front;
             $this->Content = $news->Containt;
             $this->photos = $news->photos;
