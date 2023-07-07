@@ -122,12 +122,28 @@
                         </div>
                         <div class="my-3">
                             <label for="domain_id">Domain ID:</label>
-                            <input type="text" name="domain_id" value="{{ $domain_id }}" class="form-control" placeholder="Domain ID" required>
+                            <select id="domain_id" name="domain_id" class="form-select" required>
+                                <option value="Select" disabled selected>Select</option>
+                                @foreach(App\Models\Domain::all() as $domain)
+                                <option value="{{ $domain->id }}" {{ $domain_id == $domain->id ? 'selected' : '' }}>
+                                    {{ $domain->domain_name }}
+                                </option>
+                                @endforeach
+                            </select>
                         </div>
+
                         <div class="my-3">
                             <label for="category_id">Category ID:</label>
-                            <input type="text" name="category_id" value="{{ $category_id }}" class="form-control" placeholder="Category ID" required>
+                            <select id="category_id" name="category_id" class="form-select" required>
+                                <option value="Select" disabled selected>Select</option>
+                                @foreach(App\Models\Category::all() as $category)
+                                <option value="{{ $category->id }}" {{ $category_id == $category->id ? 'selected' : '' }}>
+                                    {{ $category->Name }}
+                                </option>
+                                @endforeach
+                            </select>
                         </div>
+
                         <div>
                             <label for="Category">Category</label>
                             <select id="Name" name="Name" value="{{ $Name }}" class="form-select" aria-label="" required>
