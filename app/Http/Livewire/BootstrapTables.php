@@ -22,7 +22,7 @@ class BootstrapTables extends Component
     public $Display_in_layout;
     public $Sub_Title;
     public $image;
-    public $Slug;
+    public $slug;
     public $domain_id;
     public $selectedID;
     public $tid;
@@ -44,7 +44,7 @@ class BootstrapTables extends Component
         $this->domain_id = "";
         $this->Name = "";
         $this->Image = "";
-        $this->Slug = "";
+        $this->slug = "";
         $this->Desc = "";
         $this->Display_in_home = "";
         $this->Display_in_header = "";
@@ -66,7 +66,7 @@ class BootstrapTables extends Component
             $this->domain_id = $image->domain_id;
             $this->Name = $image->Name;
             $this->Image = $image->Image;
-            $this->Slug = $image->Slug;
+            $this->slug = $image->slug;
             $this->Desc = $image->Desc;
             $this->Display_in_home = $image->Display_in_home;
             $this->Display_in_header = $image->Display_in_header;

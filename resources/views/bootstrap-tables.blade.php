@@ -142,7 +142,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="Slug">Slug:</label>
-                                <input type="text" name="Slug" value="{{ $Slug }}" class="form-control" placeholder="Slug" required>
+                                <input type="text" name="slug" value="{{ $slug }}" class="form-control" placeholder="Slug" required>
 
                             </div>
                         </div>

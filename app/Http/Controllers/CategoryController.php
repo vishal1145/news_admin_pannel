@@ -15,7 +15,7 @@ class CategoryController extends Controller
     {
 
         $request->validate([
-            'Desc' => ['required', 'max:140'],
+            // 'Desc' => ['required', 'max:140'],
             // 'Sub_Title' => ['required','max:250'],
         ]);
 
@@ -36,7 +36,7 @@ class CategoryController extends Controller
                 $file->move('storage/', $filename);
                 $student->Image = $filename;
             }
-            $student->Slug = $request->input('Slug');
+            $student->slug = $request->input('slug');
             $student->Desc = $request->input('Desc');
             $student->Display_in_home = $request->has('Display_in_home');
             $student->Display_in_header = $request->has('Display_in_header');
@@ -54,7 +54,7 @@ class CategoryController extends Controller
                 $file->move('storage/', $filename);
                 $image->Image = $filename;
             }
-            $image->Slug = $request->input('Slug');
+            $image->slug = $request->input('slug');
             $image->Desc = $request->input('Desc');
             $image->Display_in_home = $request->has('Display_in_home');
             $image->Display_in_header = $request->has('Display_in_header');
