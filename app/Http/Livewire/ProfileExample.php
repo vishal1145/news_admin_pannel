@@ -79,7 +79,7 @@ class ProfileExample extends Component
             $this->youtube = $news->youtube;
             $this->tags = $news->tags;
             $this->Display_in_front = $news->Display_in_front;
-            $this->Content = $news->Containt;
+            $this->Content = $news->Content;
             $this->photos = $news->photos;
         }   
 

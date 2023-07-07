@@ -145,7 +145,7 @@
                 </div>
             </div>
             <div class="col-md-7" style="max-height: 506px; overflow-y: scroll; text-align: justify;">
-                <td>{!! str_replace('_', ' ', $livewire->Containt) !!}</td>
+                <td>{!! str_replace('_', ' ', $livewire->Content) !!}</td>
             </div>
         </div>
         @endforeach

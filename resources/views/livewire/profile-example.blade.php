@@ -259,13 +259,14 @@
                     </div>
                     <div class="col-md-8">
                         <div class="col-md-12 mb-3">
-                            <label for="Content">Containt</label>
-                            <textarea class="Content form-control" id="editor" value="{{ $Content }}" name="Content" style="height: 550px;" required>{!! $Content !!}</textarea>
+                            <label for="Content">Content</label>
+                            <textarea class="Content form-control" id="editor" name="Content" value="{{ $Content }}" style="height: 550px;">{!! $Content !!}</textarea>
                             @error('Content')
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
+
                 </div>
         </div>
     </div>
@@ -275,24 +276,24 @@
 
 </body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
 <script>
     ClassicEditor
         .create(document.querySelector('#editor'), {
             ckfinder: {
                 uploadUrl: '{{ route("ckeditor.upload") }}?_token={{ csrf_token() }}'
             }
-
         })
         .then(editor => {
+            editor.setData('{!! $Content !!}'); // Set the initial content using editor.setData()
             console.log(editor);
         })
         .catch(error => {
             console.error(error);
         });
-</script>  -->
+</script>
 <script type="text/javascript">
     $("document").ready(function() {
         $('select[name="Subcategory"]').on('change', function() {
