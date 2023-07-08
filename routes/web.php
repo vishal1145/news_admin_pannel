@@ -31,6 +31,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\LayoutController;
 use App\Models\Layout;
 
@@ -68,6 +69,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/upload', [NewsController::class, 'uploadimage'])->name('ckeditor.upload');
     Route::get('/users', Users::class)->name('users');
     Route::post('/category', [CategoryController::class,'store'])->name('category.store');
+    Route::post('/header', [HeaderController::class,'store'])->name('header.store');
+    Route::delete('/500/{header}', [MetaController::class,'destroy'])->name('headers.destroy');
     Route::post('/subcategory', [SubcategoryController::class,'store'])->name('subcategory.store');
     Route::post('/meta', [MetaController::class,'store'])->name('meta.store');
     Route::delete('/typography/{live}', [MetaController::class,'destroy'])->name('live.destroy');
