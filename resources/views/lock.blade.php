@@ -66,7 +66,7 @@
                         <thead>
                             <tr>
                                 <th class="fixed-column">Name</th>
-                                <!-- <th>Favicon</th> -->
+                                <th>Favicon</th>
                                 <th>Slug</th>
                                 <th></th>
                             </tr>
@@ -75,7 +75,7 @@
                             @foreach ($layouts as $layout)
                             <tr>
                                 <td><a href="{{ $layout->name }}" target="_blank">{{ $layout->Display_in_layout }}</a></td>
-                                <!-- <td><img class="card-img-top" src="{{ url('storage/'.$layout->icon) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td> -->
+                                <td><img class="card-img-top" src="{{ url('storage/'.$layout->icon) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
                                 <td>{{ $layout->slug }}</td>
                                 <td>
                                     <form action="{{ route('layout.destroy',$layout->id) }}" method="Post">
