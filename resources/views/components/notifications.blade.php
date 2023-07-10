@@ -127,7 +127,7 @@
 
                                     <label for="icon">Icon:</label>
                                     <input type="file" name="icon" class="form-control" placeholder="Icon">
-                                    <img class="card-img-top" src="{{ url('storage/'.$icon) }}" alt="Card image cap" style="width: 104px; height: 104px; margin-top: 12px;">
+                                    <img class="card-img-top" src="{{ secure-asset('storage/'.$icon) }}" alt="Card image cap" style="width: 104px; height: 104px; margin-top: 12px;">
 
                                     @endif
                                 </div>
