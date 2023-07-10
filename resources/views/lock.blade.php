@@ -50,7 +50,7 @@
                 </nav>
                 <h2 class="h4">Layout</h2>
             </div>
-            <div class="btn-toolbar mb-2 mb-md-0" style="margin-left: 880px;">
+            <div class="btn-toolbar mb-2 mb-md-0" style="margin-left: 800px;">
             <a href="{{ route('notifications', [ 'tid' => '-1' ]) }}" class="btn btn-pill btn-outline-primary">
                 <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
