@@ -115,24 +115,7 @@
 
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <div>
-                                    @if($tid == -1)
-
-                                    <label for="icon">Icon:</label>
-                                    <input type="file" name="icon" class="form-control" placeholder="Icon">
-
-                                    @else
-
-                                    <label for="icon">Icon:</label>
-                                    <input type="file" name="icon" class="form-control" placeholder="Icon">
-                                    <img class="card-img-top" src="{{ url('storage/'.$icon) }}" alt="Card image cap" style="width: 104px; height: 104px; margin-top: 12px;">
-
-                                    @endif
-                                </div>
-
-                            </div>
+                        
                             <div class="col-md-6 mb-3">
                                 <label for="slug">Slug:</label>
                                 <input type="text" name="slug" value="{{ $slug }}" class="form-control" placeholder="Slug" required>
