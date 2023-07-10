@@ -98,7 +98,7 @@
 
                 <div class="card card-body border-0 shadow mb-4">
 
-                    <form action="{{ secure_url(route('layout.store')) }}" id="myform" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url(route('layout.store', , [], true)) }}" id="myform" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="tid" value="{{ $editId }}">
                         <!--  -->
