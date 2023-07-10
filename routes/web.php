@@ -74,7 +74,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/subcategory', [SubcategoryController::class,'store'])->name('subcategory.store');
     Route::post('/meta', [MetaController::class,'store'])->name('meta.store');
     Route::delete('/typography/{live}', [MetaController::class,'destroy'])->name('live.destroy');
-    Route::post('/layout', [LayoutController::class, 'store'])->name('layout.store')->middleware('https');
+    Route::post('/layout', [LayoutController::class, 'store'])->name('layout.store');
     Route::delete('/lock/{layout}', [LayoutController::class,'destroy'])->name('layout.destroy');
 
     // Route::get('/users/show', Users::class)->name('users');
