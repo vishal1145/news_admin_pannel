@@ -247,6 +247,14 @@
                             <label for="tags">Tags:</label>
                             <input type="text" name="tags" value="{{ json_encode($tags) }}" class="form-control" placeholder="Tags" required>
                         </div>
+                        <div class="my-3">
+                            <label for="author">Author:</label>
+                            <input type="text" name="author" value="{{ $author }}" class="form-control" placeholder="Author" required>
+                        </div>
+                        <div class="my-3">
+                            <label for="keyword">Keyword:</label>
+                            <input type="text" name="keyword" value="{{ $keyword }}" class="form-control" placeholder="Keyword" required>
+                        </div>
                         <div>
                             @if($Display_in_front == 1)
                             <label><input type="checkbox" name="Display_in_front" value="{{ $Display_in_front }}" checked> Display in Front</label>

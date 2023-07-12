@@ -94,6 +94,8 @@ class NewsController extends Controller
             $news->SubCatName = $request->input('SubCatName');
             $news->youtube = $request->input('youtube');
             $news->tags = json_encode($request->input('tags'));
+            $news->author = $request->input('author');
+            $news->keyword = $request->input('keyword');
             $news->Display_in_front = $request->has('Display_in_front');
             $news->Content = $request->input('Content');
             $news->save();
@@ -121,7 +123,8 @@ class NewsController extends Controller
             $image->youtube = $request->input('youtube');
 
             $image->tags = json_encode($request->input('tags'));
-
+            $image->author = $request->input('author');
+            $image->keyword = $request->input('keyword');
             $image->Display_in_front = $request->has('Display_in_front');
             $image->Content = $request->input('Content');
             $image->save();
