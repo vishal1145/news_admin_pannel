@@ -20,6 +20,7 @@ class BootstrapTables extends Component
     public $Display_in_header;
     public $Display_in_top_nav;
     public $Display_in_layout;
+    public $Display_in_Home_Rank;
     public $Sub_Title;
     public $image;
     public $slug;
@@ -50,6 +51,7 @@ class BootstrapTables extends Component
         $this->Display_in_header = "";
         $this->Display_in_top_nav = "";
         $this->Display_in_layout = "";
+        $this->Display_in_Home_Rank = "";
 
         // $isSubcategory = false;
         // if(isset($this->catid)){
@@ -71,6 +73,7 @@ class BootstrapTables extends Component
             $this->Display_in_home = $image->Display_in_home;
             $this->Display_in_header = $image->Display_in_header;
             $this->Display_in_top_nav = $image->Display_in_top_nav;
+            $this->Display_in_Home_Rank = $image->Display_in_Home_Rank;
             $this->Display_in_layout = $image->Display_in_layout;
 
             // $this->categories =  Domain::pluck('id', 'domain_name');

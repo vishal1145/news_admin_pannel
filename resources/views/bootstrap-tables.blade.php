@@ -177,6 +177,12 @@
                             <label><input type="checkbox" name="Display_in_top_nav" value="{{ $Display_in_top_nav }}"> Display in Top Nav-Header</label>
                             @endif
 
+                            @if($Display_in_Home_Rank == 1)
+                            <label><input type="checkbox" name="Display_in_Home_Rank" value="{{ $Display_in_Home_Rank }}" checked> Display in Home Rank</label>
+                            @else
+                            <label><input type="checkbox" name="Display_in_Home_Rank" value="{{ $Display_in_Home_Rank }}"> Display in Top Home Rank</label>
+                            @endif
+
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="layout">Layout:</label>

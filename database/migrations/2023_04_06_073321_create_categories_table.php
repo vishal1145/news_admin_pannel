@@ -24,6 +24,7 @@ return new class extends Migration
             $table->boolean('Display_in_header');
             $table->boolean('Display_in_top_nav');
             $table->string('Display_in_layout');
+            $table->string('Display_in_Home_Rank');
 
             $table->timestamps();
         });

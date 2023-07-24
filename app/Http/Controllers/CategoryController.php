@@ -41,6 +41,7 @@ class CategoryController extends Controller
             $student->Display_in_home = $request->has('Display_in_home');
             $student->Display_in_header = $request->has('Display_in_header');
             $student->Display_in_top_nav = $request->has('Display_in_top_nav');
+            $student->Display_in_Home_Rank = $request->has('Display_in_Home_Rank');
             $student->Display_in_layout = $request->has('Display_in_layout');
             $student->save();
         } else {
@@ -59,6 +60,7 @@ class CategoryController extends Controller
             $image->Display_in_home = $request->has('Display_in_home');
             $image->Display_in_header = $request->has('Display_in_header');
             $image->Display_in_top_nav = $request->has('Display_in_top_nav');
+            $image->Display_in_Home_Rank = $request->has('Display_in_Home_Rank');
             $image->Display_in_layout = $request->has('Display_in_layout');
 
             // $image->Sub_Title = $request->input('Sub_Title');
