@@ -241,7 +241,7 @@
                         </div>
                         <div class="my-3">
                             <label for="youtube">YouTube:</label>
-                            <input type="text" name="youtube" value="{{ $youtube }}" class="form-control" placeholder="YouTube" required>
+                            <input type="text" name="youtube" value="{{ $youtube }}" class="form-control" placeholder="YouTube">
                         </div>
                         <div class="my-3">
                             <label for="tags">Tags:</label>
