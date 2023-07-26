@@ -99,7 +99,14 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="domain_id">Domain ID:</label>
-                            <input type="text" name="domain_id" value="{{ $domain_id }}" class="form-control" placeholder="Domain ID" required>
+                            <select id="domain_id" name="domain_id" class="form-select" required>
+                                <option value="Select" disabled selected>Select</option>
+                                @foreach(App\Models\Domain::all() as $domain)
+                                <option value="{{ $domain->id }}" {{ $domain_id == $domain->id ? 'selected' : '' }}>
+                                    {{ $domain->domain_name }}
+                                </option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="col-md-4 mb-3">
