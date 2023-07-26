@@ -33,6 +33,7 @@ use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\LayoutController;
+use App\Http\Controllers\NeighbourController;
 use App\Models\Layout;
 
 /*
@@ -76,6 +77,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/typography/{live}', [MetaController::class,'destroy'])->name('live.destroy');
     Route::post('/layout', [LayoutController::class, 'store'])->name('layout.store');
     Route::delete('/lock/{layout}', [LayoutController::class,'destroy'])->name('layout.destroy');
+    Route::post('/neighbour', [NeighbourController::class, 'store'])->name('neighbour.store');
+    Route::delete('/login-example/{result}', [NeighbourController::class,'destroy'])->name('result.destroy');
+
 
     // Route::get('/users/show', Users::class)->name('users');
     // Route::get('/users/destroy', Users::class)->name('users');
