@@ -16,7 +16,7 @@ class Transactions extends Component
         $domain_name = $request->domain_name;
     
         $this->categories= Category::when(!is_null($domain_name), function ($query) use ($domain_name) {
-            return $query->where('domain_name', $domain_name);
+            return $query->where('id', $domain_name);
         })->latest()->get();
     
         // $categories = Category::get();

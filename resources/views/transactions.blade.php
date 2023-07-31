@@ -84,7 +84,7 @@
                     <select class="form-control" name="domain_name" id="domain_name">
                         <option disabled selected {{is_null(request()->input('domain_name')) ? 'selected' : ''}} value=""> Domain</option>
                         @foreach(App\Models\Domain::all() as $key=> $domain_name)
-                        <option value="{{$domain_name->domain_name}}">{{$domain_name->domain_name}}</option>
+                        <option value="{{$domain_name->id}}">{{$domain_name->domain_name}}</option>
                         @endforeach
                     </select>
             </div>
