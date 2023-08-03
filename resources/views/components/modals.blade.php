@@ -220,6 +220,10 @@
                             <label for="punchdesc">Punch Desc:</label>
                             <input type="text" name="punchdesc" value="{{ $punchdesc }}" class="form-control" placeholder="Punch Desc.." required>
                         </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="who_we_are">Who we are:</label>
+                            <textarea type="text" name="who_we_are" value="{{ $who_we_are }}" class="form-control" placeholder="Who we are" style="height: 17px;"></textarea>
+                        </div>
                     </div>
 
                     <div class="row">
@@ -232,6 +236,10 @@
                             <label for="company">Company:</label>
                             <input type="text" name="company" value="{{ $company }}" class="form-control" placeholder="Company" required>
                         </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="how_we_help">How we help:</label>
+                            <textarea type="text" name="how_we_help" value="{{ $how_we_help }}" class="form-control" placeholder="How we help" style="height: 17px;"></textarea>
+                        </div
                     </div>
                     <div class="row">
                         <div class="col-md-8">

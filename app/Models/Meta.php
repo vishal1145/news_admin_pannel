@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Meta extends Model
 {
     use HasFactory;
-    protected $fillable = ['domain_id','facebook', 'favicon', 'desc', 'twitter', 'image', 'author', 'instagram', 'title', 'keyword', 'pinterest', 'youtube', 'punchline', 'punchdesc', 'punchlogo', 'design', 'company', 'privacy', 'terms', 'facebook_id', 'analytics_id'];
+    protected $fillable = ['domain_id','facebook', 'favicon', 'desc', 'twitter', 'image', 'author', 'instagram', 'title', 'keyword', 'pinterest', 'youtube', 'punchline', 'punchdesc', 'punchlogo', 'who_we_are', 'design', 'company', 'how_we_help', 'privacy', 'terms', 'facebook_id', 'analytics_id'];
 
 }

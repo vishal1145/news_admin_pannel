@@ -30,8 +30,10 @@ return new class extends Migration
             $table->string('punchline');
             $table->string('punchdesc');
             $table->string('punchlogo');
+            $table->string('who_we_are');
             $table->string('design');
             $table->string('company');
+            $table->string('how_we_help');
             $table->string('privacy');
             $table->string('terms');
             $table->string('facebook_id');

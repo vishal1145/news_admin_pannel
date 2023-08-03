@@ -27,8 +27,10 @@ class Modals extends Component
     public $punchline;
     public $punchdesc;
     public $punchlogo;
+    public $who_we_are;
     public $design;
     public $company;
+    public $how_we_help;
     public $privacy;
     public $terms;
     public $facebook_id;
@@ -64,8 +66,10 @@ class Modals extends Component
         $this->punchline = "";
         $this->punchdesc = "";
         $this->punchlogo = "";
+        $this->who_we_are = "";
         $this->design = "";
         $this->company = "";
+        $this->how_we_help = "";
         $this->privacy = "";
         $this->terms = "";
         $this->facebook_id = "";
@@ -89,8 +93,10 @@ class Modals extends Component
             $this->punchline = $image->punchline;
             $this->punchdesc = $image->punchdesc;
             $this->punchlogo = $image->punchlogo;
+            $this->who_we_are = $image->who_we_are;
             $this->design = $image->design;
             $this->company = $image->company;
+            $this->how_we_help = $image->how_we_help;
             $this->privacy = $image->privacy;
             $this->terms = $image->terms;
             $this->facebook_id = $image->facebook_id;

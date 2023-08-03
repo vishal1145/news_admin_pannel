@@ -45,8 +45,10 @@ class MetaController extends Controller
             $student->analytics_id = $request->input('analytics_id');
             $student->punchline = $request->input('punchline');
             $student->punchdesc = $request->input('punchdesc');
+            $student->who_we_are = $request->input('who_we_are');
             $student->design = $request->input('design');
             $student->company = $request->input('company');
+            $student->how_we_help = $request->input('how_we_help');
             $student->privacy = $request->input('privacy');
             $student->terms = $request->input('terms');
             $student->facebook_id = $request->input('facebook_id');
@@ -87,8 +89,10 @@ class MetaController extends Controller
             $image->analytics_id = $request->input('analytics_id');
             $image->punchline = $request->input('punchline');
             $image->punchdesc = $request->input('punchdesc');
+            $image->who_we_are = $request->input('who_we_are');
             $image->design = $request->input('design');
             $image->company = $request->input('company');
+            $image->how_we_help = $request->input('how_we_help');
             $image->privacy = $request->input('privacy');
             $image->terms = $request->input('terms');
             $image->facebook_id = $request->input('facebook_id');
