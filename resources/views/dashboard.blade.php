@@ -1,13 +1,20 @@
 <title>News Admin Pannel</title>
 <div class="py-4">
     <div class="dropdown">
-    <a href="{{ route('profile-example', [ 'tid' => '-1' ]) }}" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
-            <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
+        <a href="{{ route('bootstrap-tables', [ 'tid' => '-1' ]) }}" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
+            <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                 </path>
             </svg>
             Add Category
+        </a>
+
+        <a href="{{ route('profile-example', [ 'tid' => '-1' ]) }}" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
+            <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+                </path>
+            </svg>
+            Add News
         </a>
         <!-- <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
             <a class="dropdown-item d-flex align-items-center" href="#">
@@ -33,10 +40,10 @@
             </a>
         </div>
     </div> -->
-</div>
-<div class="row">
-    <div class="col-12 mb-4">
-        <!-- <div class="card border-0 shadow" style="background-color: #fac0b9">
+    </div>
+    <div class="row">
+        <div class="col-12 mb-4">
+            <!-- <div class="card border-0 shadow" style="background-color: #fac0b9">
             <div class="card-header d-sm-flex flex-row align-items-center flex-0">
                 <div class="d-block mb-3 mb-sm-0">
                     <div class="fs-5 fw-normal mb-2">Sales Value</div>
@@ -56,68 +63,72 @@
                 <div class="ct-chart-sales-value ct-double-octave ct-series-g"></div>
             </div>
         </div> -->
-    </div>
-    <div class="col-12 col-sm-6 col-xl-4 mb-4">
-        <div class="card border-0 shadow">
-            <div class="card-body">
-                <div class="row d-block d-xl-flex align-items-center">
-                    <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
-                        <div class="icon-shape icon-shape-primary rounded me-4 me-sm-0">
-                            <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path></svg>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 mb-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="row d-block d-xl-flex align-items-center">
+                        <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                            <div class="icon-shape icon-shape-primary rounded me-4 me-sm-0">
+                                <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                                </svg>
+                            </div>
+                            <div class="d-sm-none">
+                                <h2 class="h5">Category</h2>
+                                <h3 class="fw-extrabold mb-1">345,678</h3>
+                            </div>
                         </div>
-                        <div class="d-sm-none">
-                            <h2 class="h5">Category</h2>
-                            <h3 class="fw-extrabold mb-1">345,678</h3>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xl-7 px-xl-0">
-                        <div class="d-none d-sm-block">
-                            <h2 class="h6 text-gray-400 mb-0">Category</h2>
-                            <h3 class="fw-extrabold mb-2"></h3>
+                        <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
-                            <h3 class="fw-extrabold mb-2">3</h3>
-                        </div>
+                                <h2 class="h6 text-gray-400 mb-0">Category</h2>
+                                <h3 class="fw-extrabold mb-2"></h3>
+                                <div class="d-none d-sm-block">
+                                    <h3 class="fw-extrabold mb-2">{{ $totalCategories }}</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-12 col-sm-6 col-xl-4 mb-4">
-        <div class="card border-0 shadow">
-            <div class="card-body">
-                <div class="row d-block d-xl-flex align-items-center">
-                    <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
-                        <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
-                            <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
+        <div class="col-12 col-sm-6 col-xl-4 mb-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="row d-block d-xl-flex align-items-center">
+                        <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                            <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
+                                <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="d-sm-none">
+                                <h2 class="h5">News</h2>
+                                <h3 class="fw-extrabold mb-1">345,678</h3>
+                            </div>
                         </div>
-                        <div class="d-sm-none">
-                            <h2 class="h5">News</h2>
-                            <h3 class="fw-extrabold mb-1">345,678</h3>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xl-7 px-xl-0">
-                        <div class="d-none d-sm-block">
-                            <h2 class="h6 text-gray-400 mb-0">News</h2>
-                            <h3 class="fw-extrabold mb-2"></h3>
+                        <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
-                            <h3 class="fw-extrabold mb-2">50.88%</h3>
-                        </div>
-                        <!-- <small class="text-gray-500">
+                                <h2 class="h6 text-gray-400 mb-0">News</h2>
+                                <h3 class="fw-extrabold mb-2"></h3>
+                                <div class="d-none d-sm-block">
+                                    <h3 class="fw-extrabold mb-2">{{ $totalNews }}</h3>
+                                </div>
+                                <!-- <small class="text-gray-500">
                             Feb 1 - Apr 1
                         </small> 
                         <div class="small d-flex mt-1">                               
                             <div>Since last month <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg><span class="text-success fw-bolder">4%</span></div>
                         </div>
                     </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-12 col-sm-6 col-xl-4 mb-4">
-        <!-- <div class="card border-0 shadow">
+        <div class="col-12 col-sm-6 col-xl-4 mb-4">
+            <!-- <div class="card border-0 shadow">
             <div class="card-body">
                 <div class="row d-block d-xl-flex align-items-center">
                     <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
@@ -134,17 +145,17 @@
                             <h2 class="h6 text-gray-400 mb-0"> Bounce Rate</h2>
                             <h3 class="fw-extrabold mb-2">50.88%</h3>
                         </div> -->
-                        <!-- <small class="text-gray-500">
+            <!-- <small class="text-gray-500">
                             Feb 1 - Apr 1
                         </small> 
                         <div class="small d-flex mt-1">                               
                             <div>Since last month <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg><span class="text-success fw-bolder">4%</span></div>
                         </div>
                     </div> -->
-                </div>
-            </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 <div class="row">
     <div class="col-12 col-xl-8">
@@ -453,8 +464,8 @@
                 </div>
             </div>
         </div> -->
-    </div>
-    <!-- <div class="col-12 col-xl-4">
+            </div>
+            <!-- <div class="col-12 col-xl-4">
         <div class="col-12 px-0 mb-4">
             <div class="card border-0 shadow">
                 <div class="card-header d-flex flex-row align-items-center flex-0 border-bottom">
@@ -565,5 +576,5 @@
                 </div>
             </div>
         </div> -->
+        </div>
     </div>
-</div>
