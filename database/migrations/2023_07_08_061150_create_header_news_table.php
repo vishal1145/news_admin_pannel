@@ -16,17 +16,17 @@ return new class extends Migration
         Schema::create('header_news', function (Blueprint $table) {
             $table->id();
             $table->string('display_title');
-            $table->boolean('publish_status');
+            $table->boolean('publish_status')->nullable();
             $table->bigInteger('domain_id');
             $table->bigInteger('category_id');
             $table->string('Title');
             $table->string('photos');
-            $table->string('domain_name');
+            $table->string('domain_name')->nullable();
             $table->string('Slug');
             $table->timestamp('Date');
-            $table->string('Name');
-            $table->string('SubCatName');
-            $table->string('youtube');
+            $table->string('Name')->nullable();
+            $table->string('SubCatName')->nullable();
+            $table->string('youtube')->nullable();
             $table->json('tags')->nullable();
             $table->boolean('Display_in_front');
             $table->longText('Content');

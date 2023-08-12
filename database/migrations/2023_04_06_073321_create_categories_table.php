@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('domain_id');
             $table->string('Name');
-            $table->string('Image');
+            $table->string('Image')->nullable();
             $table->string('slug');
-            $table->string('Desc');
+            $table->string('Desc')->nullable();
             $table->boolean('Display_in_home');
             $table->boolean('Display_in_header');
             $table->boolean('Display_in_top_nav');

@@ -157,7 +157,7 @@
                             <div class="col-md-12 mb-3">
                                 <div class="form-group">
                                     <label for="Description">Description:</label>
-                                    <textarea class="form-control" id="textAreaExample6" value="{{ $Desc }}" name="Desc" rows="3" placeholder="Description...." required></textarea>
+                                    <textarea class="form-control" id="textAreaExample6" value="{{ $Desc }}" name="Desc" rows="3" placeholder="Description...."></textarea>
 
                                     @if ($errors->has('Desc'))
                                     <span class="text-danger">{{ $errors->first('Desc') }}</span>
