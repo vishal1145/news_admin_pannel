@@ -92,7 +92,7 @@
                                 </div>
                                 <div>
                                     <label for="publish_status">Publish Status</label>
-                                    <select id="publish_status" name="publish_status" value="{{ $publish_status }}" class="form-select" aria-label="" required>
+                                    <select id="publish_status" name="publish_status" value="{{ $publish_status }}" class="form-select" aria-label="">
                                         <option value="Select" disabled {{ $publish_status === null ? 'selected' : '' }}>Select</option>
                                         <option value="1" {{ $publish_status == 1 ? 'selected' : '' }}>True</option>
                                         <option value="0" {{ $publish_status == 0 ? 'selected' : '' }}>False</option>
@@ -128,7 +128,7 @@
 
                                 <div>
                                     <label for="Category">Category</label>
-                                    <select id="Name" name="Name" value="{{ $Name }}" class="form-select" aria-label="" required>
+                                    <select id="Name" name="Name" value="{{ $Name }}" class="form-select" aria-label="">
                                         <option value="Select" disabled selected>Select</option>
                                         @foreach(App\Models\Category::all() as $key=> $Cat)
                                         @if($Name == $Cat->Name)
@@ -148,7 +148,7 @@
                                 </div>
                                 <div class="my-3">
                                     <label for="Subcategory">Sub Category</label>
-                                    <select id="SubCatName" name="SubCatName" value="{{ $SubCatName }}" class="form-select " aria-label="" required>
+                                    <select id="SubCatName" name="SubCatName" value="{{ $SubCatName }}" class="form-select " aria-label="">
                                         <option value="Select" disabled selected>Select</option>
                                         @foreach(App\Models\Subcategory::all() as $key=> $Sub)
                                         @if($SubCatName == $Sub->SubCatName)
@@ -223,11 +223,11 @@
                                 </div>
                                 <div class="my-3">
                                     <label for="youtube">YouTube:</label>
-                                    <input type="text" name="youtube" value="{{ $youtube }}" class="form-control" placeholder="YouTube" required>
+                                    <input type="text" name="youtube" value="{{ $youtube }}" class="form-control" placeholder="YouTube" >
                                 </div>
                                 <div class="my-3">
                                     <label for="tags">Tags:</label>
-                                    <input type="text" name="tags" value="{{ json_encode($tags) }}" class="form-control" placeholder="Tags" required>
+                                    <input type="text" name="tags" value="{{ json_encode($tags) }}" class="form-control" placeholder="Tags">
                                 </div>
                                 <div>
                                     @if($Display_in_front == 1)

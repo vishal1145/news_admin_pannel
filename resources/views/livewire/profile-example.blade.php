@@ -146,7 +146,7 @@
 
                         <div>
                             <label for="Category">Category</label>
-                            <select id="Name" name="Name" value="{{ $Name }}" class="form-select" aria-label="" required>
+                            <select id="Name" name="Name" value="{{ $Name }}" class="form-select" aria-label="">
                                 <option value="Select" disabled selected>Select</option>
                                 @foreach(App\Models\Category::all() as $key=> $Cat)
                                 @if($Name == $Cat->Name)
@@ -166,7 +166,7 @@
                         </div>
                         <div class="my-3">
                             <label for="Subcategory">Sub Category</label>
-                            <select id="SubCatName" name="SubCatName" value="{{ $SubCatName }}" class="form-select " aria-label="" required>
+                            <select id="SubCatName" name="SubCatName" value="{{ $SubCatName }}" class="form-select " aria-label="">
                                 <option value="Select" disabled selected>Select</option>
                                 @foreach(App\Models\Subcategory::all() as $key=> $Sub)
                                 @if($SubCatName == $Sub->SubCatName)
@@ -245,15 +245,15 @@
                         </div>
                         <div class="my-3">
                             <label for="tags">Tags:</label>
-                            <input type="text" name="tags" value="{{ json_encode($tags) }}" class="form-control" placeholder="Tags" required>
+                            <input type="text" name="tags" value="{{ json_encode($tags) }}" class="form-control" placeholder="Tags">
                         </div>
                         <div class="my-3">
                             <label for="author">Author:</label>
-                            <input type="text" name="author" value="{{ $author }}" class="form-control" placeholder="Author" required>
+                            <input type="text" name="author" value="{{ $author }}" class="form-control" placeholder="Author">
                         </div>
                         <div class="my-3">
                             <label for="keyword">Keyword:</label>
-                            <input type="text" name="keyword" value="{{ $keyword }}" class="form-control" placeholder="Keyword" required>
+                            <input type="text" name="keyword" value="{{ $keyword }}" class="form-control" placeholder="Keyword">
                         </div>
                         <div>
                             @if($Display_in_front == 1)
