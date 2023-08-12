@@ -132,7 +132,7 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="desc">Description:</label>
-                            <input type="text" name="desc" value="{{ $desc }}" class="form-control" placeholder="Description" required>
+                            <input type="text" name="desc" value="{{ $desc }}" class="form-control" placeholder="Description">
                         </div>
 
                         <div class="col-md-4 mb-3">
@@ -158,7 +158,7 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="author">Author:</label>
-                            <input type="text" name="author" value="{{ $author }}" class="form-control" placeholder="Author" required>
+                            <input type="text" name="author" value="{{ $author }}" class="form-control" placeholder="Author">
                         </div>
 
                         <div class="col-md-4 mb-3">
@@ -181,7 +181,7 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="keyword">Keyword:</label>
-                            <input type="text" name="keyword" value="{{ $keyword }}" class="form-control" placeholder="Keyword" required>
+                            <input type="text" name="keyword" value="{{ $keyword }}" class="form-control" placeholder="Keyword">
                         </div>
 
                         <div class="col-md-4 mb-3">
@@ -213,12 +213,12 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="punchline">Punch Line:</label>
-                            <input type="text" name="punchline" value="{{ $punchline }}" class="form-control" placeholder="Punch Line" required>
+                            <input type="text" name="punchline" value="{{ $punchline }}" class="form-control" placeholder="Punch Line">
                         </div>
 
                         <div class="col-md-4 mb-3">
                             <label for="punchdesc">Punch Desc:</label>
-                            <input type="text" name="punchdesc" value="{{ $punchdesc }}" class="form-control" placeholder="Punch Desc.." required>
+                            <input type="text" name="punchdesc" value="{{ $punchdesc }}" class="form-control" placeholder="Punch Desc..">
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="who_we_are">Who we are:</label>
@@ -229,12 +229,12 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="design">Design:</label>
-                            <input type="text" name="design" value="{{ $design }}" class="form-control" placeholder="Design" required>
+                            <input type="text" name="design" value="{{ $design }}" class="form-control" placeholder="Design">
                         </div>
 
                         <div class="col-md-4 mb-3">
                             <label for="company">Company:</label>
-                            <input type="text" name="company" value="{{ $company }}" class="form-control" placeholder="Company" required>
+                            <input type="text" name="company" value="{{ $company }}" class="form-control" placeholder="Company">
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="how_we_help">How we help:</label>
