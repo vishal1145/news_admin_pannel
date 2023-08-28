@@ -69,6 +69,7 @@
                                 <th>Favicon</th>
                                 <th>Image</th>
                                 <th>Punch Logo</th>
+                                <th>Hover Image</th>
                                 <th>Title</th>
                                 <th>Facebook</th>
                                 <th>Twitter</th>
@@ -90,6 +91,7 @@
                                 <td><img class="card-img-top" src="{{ url('storage/'.$live->favicon) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
                                 <td><img class="card-img-top" src="{{ url('storage/'.$live->image) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
                                 <td><img class="card-img-top" src="{{ url('storage/'.$live->punchlogo) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
+                                <td><img class="card-img-top" src="{{ url('storage/'.$live->hover_image) }}" alt="Card image cap" style="width: 44px; height: 44px;border-radius: 50%"></td>
                                 <td>{{ $live->title }}</td>
                                 <td>{{ $live->facebook }}</td>
                                 <td>{{ $live->twitter }}</td>

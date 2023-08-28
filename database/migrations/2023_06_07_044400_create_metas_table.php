@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('punchline')->nullable();
             $table->string('punchdesc')->nullable();
             $table->string('punchlogo')->nullable();
+            $table->string('hover_image')->nullable();
             $table->string('who_we_are')->nullable();
             $table->string('design')->nullable();
             $table->string('company')->nullable();

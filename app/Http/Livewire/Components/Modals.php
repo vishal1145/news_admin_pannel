@@ -27,6 +27,7 @@ class Modals extends Component
     public $punchline;
     public $punchdesc;
     public $punchlogo;
+    public $hover_image;
     public $who_we_are;
     public $design;
     public $company;
@@ -66,6 +67,7 @@ class Modals extends Component
         $this->punchline = "";
         $this->punchdesc = "";
         $this->punchlogo = "";
+        $this->hover_image = "";
         $this->who_we_are = "";
         $this->design = "";
         $this->company = "";
@@ -93,6 +95,7 @@ class Modals extends Component
             $this->punchline = $image->punchline;
             $this->punchdesc = $image->punchdesc;
             $this->punchlogo = $image->punchlogo;
+            $this->hover_image = $image->hover_image;
             $this->who_we_are = $image->who_we_are;
             $this->design = $image->design;
             $this->company = $image->company;

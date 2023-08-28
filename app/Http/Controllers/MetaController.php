@@ -59,6 +59,14 @@ class MetaController extends Controller
                 $imageFile->move('storage/', $imageFilename);
                 $student->punchlogo = $imageFilename;
             }
+            if ($request->hasFile('hover_image')) {
+                $imageFile = $request->file('hover_image');
+                $imageExtension = $imageFile->getClientOriginalExtension();
+                $imageFilename = time() . '.' . $imageExtension;
+                $imageFile->move('storage/', $imageFilename);
+                $student->hover_image = $imageFilename;
+            }
+            $student->save();
             $student->save();
         } else {
             $image = new Meta;

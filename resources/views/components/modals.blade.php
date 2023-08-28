@@ -239,33 +239,30 @@
                         <div class="col-md-4 mb-3">
                             <label for="how_we_help">How we help:</label>
                             <textarea type="text" name="how_we_help" value="{{ $how_we_help }}" class="form-control" placeholder="How we help" style="height: 17px;"></textarea>
-                        </div
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="col-md-12 mb-3">
+                        </div </div>
+                        <div class="row">
+                            <div class="col-md-8">
                                 <label for="privacy">Privacy & Policy:</label>
-                                <textarea class="Content form-control" value="" name="privacy"></textarea>
+                                <textarea class="Content form-control" id="editor" name="privacy" value="{{ $privacy }}" style="height: 550px;">{!! $privacy !!}</textarea>
                                 @error('privacy')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror
                             </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="hover_image">Hover Image:</label>
+                                <input type="file" name="hover_image" value="{{ $hover_image }}" class="form-control" placeholder="Hover Image">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="col-md-12 mb-3">
+                        <div class="row" style="margin-top: 8px;">
+                            <div class="col-md-8">
                                 <label for="terms">Terms & Conditions:</label>
-                                <textarea class="Content form-control" value="" name="terms"></textarea>
+                                <textarea class="Content form-control" id="editor1" name="terms" value="{{ $terms }}" style="height: 550px;">{!! $terms !!}</textarea>
                                 @error('terms')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
-                    </div>
-
-
-                    <button type="submit" class="btn btn-primary ml-3">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-3" style="margin-top: 8px; width: 85px;">Submit</button>
                 </form>
             </div>
         </div>
@@ -274,6 +271,40 @@
         </div>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'), {
+            ckfinder: {
+                uploadUrl: '{{ route("ckeditor.upload") }}?_token={{ csrf_token() }}'
+            }
+        })
+        .then(editor => {
+            editor.setData('{!! $privacy !!}'); // Set the initial content using editor.setData()
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor1'), {
+            ckfinder: {
+                uploadUrl: '{{ route("ckeditor.upload") }}?_token={{ csrf_token() }}'
+            }
+        })
+        .then(editor => {
+            editor.setData('{!! $terms !!}'); // Set the initial content using editor.setData()
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
 <script>
     $(document).ready(function() {
         $("#myform").on("submit", function() {
