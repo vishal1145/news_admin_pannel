@@ -166,17 +166,17 @@
                             </div>
 
                             <!-- @if($Display_in_home == 1)
-                            <label><input type="checkbox" name="Display_in_home" value="{{ $Display_in_home }}" checked> Display in Home</label>
+                            <label><input type="checkbox" name="Display_in_home" value="{{ $Display_in_home }}" checked> Display in Nav Category</label>
                             @else
                             <label><input type="checkbox" name="Display_in_home" value="{{ $Display_in_home }}"> Display in Home</label>
                             @endif -->
 
 
-                            <!-- @if($Display_in_header == 1)
-                            <label><input type="checkbox" name="Display_in_header" value="{{ $Display_in_header }}" checked> Display in Header</label>
+                            @if($Display_in_header == 1)
+                            <label><input type="checkbox" name="Display_in_header" value="{{ $Display_in_header }}" checked> Display in Header Category</label>
                             @else
-                            <label><input type="checkbox" name="Display_in_header" value="{{ $Display_in_header }}"> Display in Header</label>
-                            @endif -->
+                            <label><input type="checkbox" name="Display_in_header" value="{{ $Display_in_header }}"> Display in Header Category</label>
+                            @endif
 
                             @if($Display_in_top_nav == 1)
                             <label><input type="checkbox" name="Display_in_top_nav" value="{{ $Display_in_top_nav }}" checked> Display in Top Nav-Header</label>
