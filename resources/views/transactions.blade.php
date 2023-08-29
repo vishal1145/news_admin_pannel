@@ -107,11 +107,15 @@
     </div>
     </div>
     <tbody>
-        <div class="row">   
+        <div class="row">
             @foreach ($categories as $category)
             <div class="col-md-4">
                 <div class="card" style="margin-bottom: 15px;">
-                    <img class="card-img-top" src="{{ url('storage/'.$category->Image) }}" alt="Card image cap">
+                    <?php
+                    $imageUrl = $category->photos;
+                    $isHttps = strpos($imageUrl, 'https://') === 0;
+                    ?>
+                    <img class="card-img-top img-fluid img-hover" src="{{ $isHttps ? $imageUrl : url('storage/' . $imageUrl) }}" alt="Image" style="object-fit:cover;">
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
@@ -138,12 +142,12 @@
                                 @if($category->Display_in_home == 1)
                                 <div class="ui disabled checkbox" style="float: right;">
                                     <input type="checkbox" name="Display_in_home" value="{{ $category->Display_in_home }}" disabled="disabled">
-                                    <label >Home</label><br>
+                                    <label>Home</label><br>
                                 </div>
                                 @else
                                 <div class="ui disabled checkbox" style="float: right;">
                                     <input type="checkbox" name="Display_in_home" value="{{ $category->Display_in_home }}" disable="disabled">
-                                    <label >Home</label><br>
+                                    <label>Home</label><br>
                                 </div>
                                 @endif
                             </div>
@@ -153,12 +157,12 @@
                                 @if($category->Display_in_header == 1)
                                 <div class="ui disabled checkbox" style="float: right;">
                                     <input type="checkbox" name="Display_in_header" value="{{ $category->Display_in_header }}" disabled="disabled">
-                                    <label >Header</label>
+                                    <label>Header</label>
                                 </div>
                                 @else
                                 <div class="ui disabled checkbox" style="float: right;">
                                     <input type="checkbox" name="Display_in_header" value="{{ $category->Display_in_header }}" disable="disabled">
-                                    <label >Header</label>
+                                    <label>Header</label>
                                 </div>
                                 @endif
                             </div>

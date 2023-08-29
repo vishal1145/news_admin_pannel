@@ -114,7 +114,11 @@
         <div class="row" style="margin-bottom: 36px;">
             <div class="col-md-5">
                 <div class="card">
-                    <img class="card-img-top img-fluid img-hover" src="{{ url('storage/'.$livewire->photos) }}" alt="Image" style="object-fit:cover;">
+                    <?php
+                    $imageUrl = $livewire->photos;
+                    $isHttps = strpos($imageUrl, 'https://') === 0;
+                    ?>
+                    <img class="card-img-top img-fluid img-hover" src="{{ $isHttps ? $imageUrl : url('storage/' . $imageUrl) }}" alt="Image" style="object-fit:cover;">
                     <div class="card-body">
 
                         <p class="card-text">

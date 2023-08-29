@@ -83,7 +83,11 @@
             <div class="row" style="margin-bottom: 36px;">
                 <div class="col-md-5">
                     <div class="card">
-                        <img class="card-img-top img-fluid img-hover" src="{{ url('storage/'.$headers->photos) }}" alt="Image" style="object-fit:cover;">
+                        <?php
+                        $imageUrl = $headers->photos;
+                        $isHttps = strpos($imageUrl, 'https://') === 0;
+                        ?>
+                        <img class="card-img-top img-fluid img-hover" src="{{ $isHttps ? $imageUrl : url('storage/' . $imageUrl) }}" alt="Image" style="object-fit:cover;">
                         <div class="card-body">
 
                             <p class="card-text">
@@ -122,7 +126,7 @@
         </div>
 
     </div>
-    
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
     <script type="text/javascript">
