@@ -256,7 +256,7 @@
                         <div class="row" style="margin-top: 8px;">
                             <div class="col-md-8">
                                 <label for="terms">Terms & Conditions:</label>
-                                <textarea class="Content form-control" id="editor1" name="terms" value="{{ $terms }}" style="height: 550px;">{!! $terms !!}</textarea>
+                                <textarea class="Content form-control" id="editor1" name="terms" style="height: 550px;">{!! $terms !!}</textarea>
                                 @error('terms')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror
@@ -289,9 +289,9 @@
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var editor = ClassicEditor.instances[0]; 
+        var editor = ClassicEditor.instances[0];
         if (editor) {
-            editor.setData('{!! $privacy !!}'); 
+            editor.setData('{!! $privacy !!}');
         }
     });
 </script>
@@ -304,12 +304,28 @@
             }
         })
         .then(editor => {
-            editor.setData('{!! $terms !!}');
-            console.log(editor);
+            console.log('CKEditor1 initialized');
         })
         .catch(error => {
             console.error(error);
         });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var editor1 = ClassicEditor.instances[1];
+
+        if (editor1) {
+            editor1.setData('{!! $terms !!}');
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var editor = ClassicEditor.instances[0];
+        if (editor) {
+            editor.setData('{!! $terms !!}');
+        }
+    });
 </script>
 
 <script>
