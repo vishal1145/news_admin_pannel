@@ -243,7 +243,7 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <label for="privacy">Privacy & Policy:</label>
-                                <textarea class="Content form-control" id="editor" name="privacy" value="{{ $privacy }}" style="height: 550px;">{!! $privacy !!}</textarea>
+                                <textarea class="Content form-control" id="editor" name="privacy" style="height: 550px;">{!! $privacy !!}</textarea>
                                 @error('privacy')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror
@@ -281,12 +281,19 @@
             }
         })
         .then(editor => {
-            editor.setData('{!! $privacy !!}'); // Set the initial content using editor.setData()
-            console.log(editor);
+            console.log('CKEditor initialized');
         })
         .catch(error => {
             console.error(error);
         });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var editor = ClassicEditor.instances[0]; 
+        if (editor) {
+            editor.setData('{!! $privacy !!}'); 
+        }
+    });
 </script>
 
 <script>
@@ -297,7 +304,7 @@
             }
         })
         .then(editor => {
-            editor.setData('{!! $terms !!}'); // Set the initial content using editor.setData()
+            editor.setData('{!! $terms !!}');
             console.log(editor);
         })
         .catch(error => {
