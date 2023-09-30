@@ -261,6 +261,10 @@
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror
                             </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="adsense_id">Adsense ID:</label>
+                                <input type="text" name="adsense_id" value="{{ $adsense_id }}" class="form-control" placeholder="Adsense ID">
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary ml-3" style="margin-top: 8px; width: 85px;">Submit</button>
                 </form>
