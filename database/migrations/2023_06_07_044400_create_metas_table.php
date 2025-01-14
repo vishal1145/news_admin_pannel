@@ -39,6 +39,7 @@ return new class extends Migration
             $table->string('terms');
             $table->string('facebook_id')->nullable();
             $table->string('analytics_id')->nullable();
+            $table->string('mixpanel_id')->nullable();
             $table->string('adsense_id')->nullable();
             $table->timestamps();
         });

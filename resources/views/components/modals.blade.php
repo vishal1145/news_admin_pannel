@@ -206,7 +206,7 @@
                         </div>
 
                         <div class="col-md-4 mb-3">
-                            <label for="facebook_id">Analytics ID:</label>
+                            <label for="analytics_id">Analytics ID:</label>
                             <input type="text" name="analytics_id" value="{{ $analytics_id }}" class="form-control" placeholder="Analytics ID">
                         </div>
                     </div>
@@ -251,6 +251,9 @@
                             <div class="col-md-4 mb-3">
                                 <label for="hover_image">Hover Image:</label>
                                 <input type="file" name="hover_image" value="{{ $hover_image }}" class="form-control" placeholder="Hover Image">
+
+                                <label for="mixpanel_id" style="padding-top: 1rem;">Mixpanel ID:</label>
+                                <input type="text" name="mixpanel_id" value="{{ $mixpanel_id }}" class="form-control" placeholder="Mixpanel ID">
                             </div>
                         </div>
                         <div class="row" style="margin-top: 8px;">

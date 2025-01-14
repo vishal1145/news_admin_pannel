@@ -36,6 +36,7 @@ class Modals extends Component
     public $terms;
     public $facebook_id;
     public $analytics_id;
+    public $mixpanel_id;
     public $adsense_id;
     public $tid;
     public $catid;
@@ -77,6 +78,7 @@ class Modals extends Component
         $this->terms = "";
         $this->facebook_id = "";
         $this->analytics_id = "";
+        $this->mixpanel_id = "";
         $this->adsense_id = "";
 
         if ($this->isEdit) {
@@ -106,6 +108,7 @@ class Modals extends Component
             $this->terms = $image->terms;
             $this->facebook_id = $image->facebook_id;
             $this->analytics_id = $image->analytics_id;
+            $this->mixpanel_id = $image->mixpanel_id;
             $this->adsense_id = $image->adsense_id;
 
 

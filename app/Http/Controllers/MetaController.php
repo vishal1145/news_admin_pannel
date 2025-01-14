@@ -43,6 +43,7 @@ class MetaController extends Controller
             $student->pinterest = $request->input('pinterest');
             $student->youtube = $request->input('youtube');
             $student->analytics_id = $request->input('analytics_id');
+            $student->mixpanel_id = $request->input('mixpanel_id');
             $student->adsense_id = $request->input('adsense_id');
             $student->punchline = $request->input('punchline');
             $student->punchdesc = $request->input('punchdesc');
@@ -96,6 +97,7 @@ class MetaController extends Controller
             $image->pinterest = $request->input('pinterest');
             $image->youtube = $request->input('youtube');
             $image->analytics_id = $request->input('analytics_id');
+            $image->mixpanel_id = $request->input('mixpanel_id');
             $image->adsense_id = $request->input('adsense_id');
             $image->punchline = $request->input('punchline');
             $image->punchdesc = $request->input('punchdesc');
