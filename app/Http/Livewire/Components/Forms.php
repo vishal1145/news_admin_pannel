@@ -54,13 +54,17 @@ class Forms extends Component
             })->latest()->get();
             
         } else {
-            $this->livewires = News::when(!is_null($domain_name), function ($query) use ($domain_name) {
-                return $query->where('id', $domain_name);
-            })->latest()->get();
+            $this->livewires = News::leftJoin('page_views', 'news.id', '=', 'page_views.post_id')
+            ->select('news.*', 'page_views.view_count')
+            ->when(!is_null($domain_name), function ($query) use ($domain_name) {
+                return $query->where('news.id', $domain_name);
+            })
+            ->when(!is_null($Category), function ($query) use ($Category) {
+                return $query->where('news.Category', $Category);
+            })
+            ->latest()
+            ->get();
 
-            $this->livewires = News::when(!is_null($Category), function ($query) use ($Category) {
-                return $query->where('Category', $Category);
-            })->latest()->get();
         }
 
         return view('components.forms');

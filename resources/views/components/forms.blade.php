@@ -122,30 +122,39 @@
                     <div class="card-body">
 
                         <p class="card-text">
-                            <td><b> {{ $livewire->domain_name }} </b></td>
+                            <b>{{ $livewire->domain_name }}</b>
                         </p>
                         <p class="card-text">
-                            <td>{{ $livewire->Title }}</td>
+                            {{ $livewire->Title }}
                         </p>
-                        <p class="card-text">
-                            <td>{{ $livewire->Date }}</td>
-                        </p>
-                        <p class="card-text">
-                            <td>{{ $livewire->Name }} / {{ $livewire->SubCatName }}</td>
-                        </p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <p class="card-text1">
+                                <i class="fa fa-calendar"></i> {{ $livewire->Date }}
+                            </p>
+                            <p class="card-text1">
+                                <i class="fa fa-eye"></i> {{ $livewire->view_count ?? 0 }} Views
+                            </p>
+                        </div>
+
                         <div class="E-D-btn">
-                            <form action="{{ route('livewire.destroy',$livewire->id) }}" method="Post">
+                            <form action="{{ route('livewire.destroy', $livewire->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <div class="btn-group1" style="display: flex; justify-content: end;">
-                                    <div style="display:flex; gap:10px;">
-                                        <a class="btn btn-primary" href="{{ route('profile-example', [ 'tid' =>  $livewire->id]) }}"><i class="fa fa-edit btn-hover"></i></a>
-                                        <button type="submit" class="btn show_confirm btn-danger"><i class="fa fa-trash btn-hover"></i></button>
+                                    <div style="display: flex; gap: 10px;">
+                                        <a class="btn btn-primary" href="{{ route('profile-example', ['tid' => $livewire->id]) }}">
+                                            <i class="fa fa-edit btn-hover"></i>
+                                        </a>
+                                        <button type="submit" class="btn show_confirm btn-danger">
+                                            <i class="fa fa-trash btn-hover"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </form>
                         </div>
+
                     </div>
+
                 </div>
             </div>
             <div class="col-md-7" style="max-height: 506px; overflow-y: scroll; text-align: justify;">
